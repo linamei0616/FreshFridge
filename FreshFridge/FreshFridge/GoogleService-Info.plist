@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>268315187802-k7hjopla4qdctrgc2rfpeh0g5a1elekm.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.268315187802-k7hjopla4qdctrgc2rfpeh0g5a1elekm</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCYEU1PvhWUKrAv05iyN2W-J2oLsJ0UXQ0</string>
+	<key>GCM_SENDER_ID</key>
+	<string>268315187802</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.LinaMei.FreshFridge</string>
+	<key>PROJECT_ID</key>
+	<string>freshfridge-492f4</string>
+	<key>STORAGE_BUCKET</key>
+	<string>freshfridge-492f4.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:268315187802:ios:112aa12bdbb7784b5f1663</string>
+</dict>
+</plist>

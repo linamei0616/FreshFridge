@@ -10,7 +10,7 @@ import CoreData
 
 struct ContentView: View {
     @Environment(\.managedObjectContext) private var viewContext
-
+    @ObservedObject var itemListViewModel : ItemListViewModel
     @FetchRequest(
         sortDescriptors: [NSSortDescriptor(keyPath: \Item.timestamp, ascending: true)],
         animation: .default)
@@ -34,7 +34,7 @@ struct ContentView: View {
                     EditButton()
                 }
                 ToolbarItem {
-                    Button(action: addItem) {
+                    Button(action: addInventoryItem) {
                         Label("Add Item", systemImage: "plus")
                     }
                 }
@@ -58,7 +58,11 @@ struct ContentView: View {
             }
         }
     }
-
+    private func addInventoryItem() {
+        let item = InventoryItem(id: "" , name: "banana")
+        itemListViewModel.add(item)
+    }
+    
     private func deleteItems(offsets: IndexSet) {
         withAnimation {
             offsets.map { items[$0] }.forEach(viewContext.delete)
@@ -84,6 +88,6 @@ private let itemFormatter: DateFormatter = {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
+        ContentView(itemListViewModel: ItemListViewModel()).environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
     }
 }

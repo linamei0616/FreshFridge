@@ -7,6 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		01E119612907494400EF825E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 01E119602907494300EF825E /* GoogleService-Info.plist */; };
+		01E1196429074AE700EF825E /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 01E1196329074AE700EF825E /* FirebaseAuth */; };
+		01E1196629074AE700EF825E /* FirebaseAuthCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 01E1196529074AE700EF825E /* FirebaseAuthCombine-Community */; };
+		01E1196829074AE700EF825E /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 01E1196729074AE700EF825E /* FirebaseDatabase */; };
+		01E1196A29074AE700EF825E /* FirebaseDatabaseSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 01E1196929074AE700EF825E /* FirebaseDatabaseSwift */; };
+		01E1196C29074AE700EF825E /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 01E1196B29074AE700EF825E /* FirebaseFirestore */; };
+		01E1196E29074AE700EF825E /* FirebaseFirestoreCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 01E1196D29074AE700EF825E /* FirebaseFirestoreCombine-Community */; };
+		01E1197029074AE700EF825E /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 01E1196F29074AE700EF825E /* FirebaseFirestoreSwift */; };
+		01E1197229074AE700EF825E /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 01E1197129074AE700EF825E /* FirebaseStorage */; };
+		01E1197429074AE700EF825E /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 01E1197329074AE700EF825E /* FirebaseStorageCombine-Community */; };
+		01E1197629074F7100EF825E /* ItemRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E1197529074F7100EF825E /* ItemRepository.swift */; };
+		01E11978290750DE00EF825E /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E11977290750DE00EF825E /* Item.swift */; };
+		01E1197A290752EC00EF825E /* ItemListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E11979290752EC00EF825E /* ItemListViewModel.swift */; };
 		3B6F6E4D2900BF2000242495 /* FreshFridgeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6F6E4C2900BF2000242495 /* FreshFridgeApp.swift */; };
 		3B6F6E4F2900BF2000242495 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6F6E4E2900BF2000242495 /* ContentView.swift */; };
 		3B6F6E512900BF2100242495 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B6F6E502900BF2100242495 /* Assets.xcassets */; };
@@ -16,6 +29,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		01E119602907494300EF825E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		01E1197529074F7100EF825E /* ItemRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemRepository.swift; sourceTree = "<group>"; };
+		01E11977290750DE00EF825E /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		01E11979290752EC00EF825E /* ItemListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemListViewModel.swift; sourceTree = "<group>"; };
 		3B6F6E492900BF2000242495 /* FreshFridge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FreshFridge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B6F6E4C2900BF2000242495 /* FreshFridgeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FreshFridgeApp.swift; sourceTree = "<group>"; };
 		3B6F6E4E2900BF2000242495 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -30,6 +47,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				01E1196A29074AE700EF825E /* FirebaseDatabaseSwift in Frameworks */,
+				01E1196829074AE700EF825E /* FirebaseDatabase in Frameworks */,
+				01E1196429074AE700EF825E /* FirebaseAuth in Frameworks */,
+				01E1197029074AE700EF825E /* FirebaseFirestoreSwift in Frameworks */,
+				01E1196E29074AE700EF825E /* FirebaseFirestoreCombine-Community in Frameworks */,
+				01E1197229074AE700EF825E /* FirebaseStorage in Frameworks */,
+				01E1196C29074AE700EF825E /* FirebaseFirestore in Frameworks */,
+				01E1197429074AE700EF825E /* FirebaseStorageCombine-Community in Frameworks */,
+				01E1196629074AE700EF825E /* FirebaseAuthCombine-Community in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -39,6 +65,9 @@
 		3B6F6E402900BF2000242495 = {
 			isa = PBXGroup;
 			children = (
+				01E1197529074F7100EF825E /* ItemRepository.swift */,
+				01E11977290750DE00EF825E /* Item.swift */,
+				01E11979290752EC00EF825E /* ItemListViewModel.swift */,
 				3B6F6E4B2900BF2000242495 /* FreshFridge */,
 				3B6F6E4A2900BF2000242495 /* Products */,
 			);
@@ -60,6 +89,7 @@
 				3B6F6E502900BF2100242495 /* Assets.xcassets */,
 				3B6F6E552900BF2100242495 /* Persistence.swift */,
 				3B6F6E572900BF2100242495 /* FreshFridge.xcdatamodeld */,
+				01E119602907494300EF825E /* GoogleService-Info.plist */,
 				3B6F6E522900BF2100242495 /* Preview Content */,
 			);
 			path = FreshFridge;
@@ -89,6 +119,17 @@
 			dependencies = (
 			);
 			name = FreshFridge;
+			packageProductDependencies = (
+				01E1196329074AE700EF825E /* FirebaseAuth */,
+				01E1196529074AE700EF825E /* FirebaseAuthCombine-Community */,
+				01E1196729074AE700EF825E /* FirebaseDatabase */,
+				01E1196929074AE700EF825E /* FirebaseDatabaseSwift */,
+				01E1196B29074AE700EF825E /* FirebaseFirestore */,
+				01E1196D29074AE700EF825E /* FirebaseFirestoreCombine-Community */,
+				01E1196F29074AE700EF825E /* FirebaseFirestoreSwift */,
+				01E1197129074AE700EF825E /* FirebaseStorage */,
+				01E1197329074AE700EF825E /* FirebaseStorageCombine-Community */,
+			);
 			productName = FreshFridge;
 			productReference = 3B6F6E492900BF2000242495 /* FreshFridge.app */;
 			productType = "com.apple.product-type.application";
@@ -117,6 +158,9 @@
 				Base,
 			);
 			mainGroup = 3B6F6E402900BF2000242495;
+			packageReferences = (
+				01E1196229074AE700EF825E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = 3B6F6E4A2900BF2000242495 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -133,6 +177,7 @@
 			files = (
 				3B6F6E542900BF2100242495 /* Preview Assets.xcassets in Resources */,
 				3B6F6E512900BF2100242495 /* Assets.xcassets in Resources */,
+				01E119612907494400EF825E /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -147,6 +192,9 @@
 				3B6F6E592900BF2100242495 /* FreshFridge.xcdatamodeld in Sources */,
 				3B6F6E4F2900BF2000242495 /* ContentView.swift in Sources */,
 				3B6F6E4D2900BF2000242495 /* FreshFridgeApp.swift in Sources */,
+				01E11978290750DE00EF825E /* Item.swift in Sources */,
+				01E1197A290752EC00EF825E /* ItemListViewModel.swift in Sources */,
+				01E1197629074F7100EF825E /* ItemRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -347,6 +395,65 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		01E1196229074AE700EF825E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		01E1196329074AE700EF825E /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 01E1196229074AE700EF825E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		01E1196529074AE700EF825E /* FirebaseAuthCombine-Community */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 01E1196229074AE700EF825E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = "FirebaseAuthCombine-Community";
+		};
+		01E1196729074AE700EF825E /* FirebaseDatabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 01E1196229074AE700EF825E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabase;
+		};
+		01E1196929074AE700EF825E /* FirebaseDatabaseSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 01E1196229074AE700EF825E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabaseSwift;
+		};
+		01E1196B29074AE700EF825E /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 01E1196229074AE700EF825E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		01E1196D29074AE700EF825E /* FirebaseFirestoreCombine-Community */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 01E1196229074AE700EF825E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = "FirebaseFirestoreCombine-Community";
+		};
+		01E1196F29074AE700EF825E /* FirebaseFirestoreSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 01E1196229074AE700EF825E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestoreSwift;
+		};
+		01E1197129074AE700EF825E /* FirebaseStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 01E1196229074AE700EF825E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseStorage;
+		};
+		01E1197329074AE700EF825E /* FirebaseStorageCombine-Community */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 01E1196229074AE700EF825E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = "FirebaseStorageCombine-Community";
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		3B6F6E572900BF2100242495 /* FreshFridge.xcdatamodeld */ = {

@@ -21,7 +21,7 @@ struct FirstScreen: View {
                 .padding(.bottom, 240)
             
             // add picture of fridge handle in between here
-            
+
             RoundedRectangle(cornerRadius: 20)
                 .fill(lightBlue)
                 .frame(height: 50)

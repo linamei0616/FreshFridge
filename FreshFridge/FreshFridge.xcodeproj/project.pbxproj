@@ -26,6 +26,7 @@
 		3B6F6E542900BF2100242495 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B6F6E532900BF2100242495 /* Preview Assets.xcassets */; };
 		3B6F6E562900BF2100242495 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6F6E552900BF2100242495 /* Persistence.swift */; };
 		3B6F6E592900BF2100242495 /* FreshFridge.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3B6F6E572900BF2100242495 /* FreshFridge.xcdatamodeld */; };
+		3BD0CA1E29186EA700489700 /* FirstScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BD0CA1D29186EA700489700 /* FirstScreen.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		3B6F6E532900BF2100242495 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		3B6F6E552900BF2100242495 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		3B6F6E582900BF2100242495 /* FreshFridge.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FreshFridge.xcdatamodel; sourceTree = "<group>"; };
+		3BD0CA1D29186EA700489700 /* FirstScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstScreen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +88,7 @@
 			children = (
 				3B6F6E4C2900BF2000242495 /* FreshFridgeApp.swift */,
 				3B6F6E4E2900BF2000242495 /* ContentView.swift */,
+				3BD0CA1D29186EA700489700 /* FirstScreen.swift */,
 				3B6F6E502900BF2100242495 /* Assets.xcassets */,
 				3B6F6E552900BF2100242495 /* Persistence.swift */,
 				3B6F6E572900BF2100242495 /* FreshFridge.xcdatamodeld */,
@@ -192,6 +195,7 @@
 				3B6F6E592900BF2100242495 /* FreshFridge.xcdatamodeld in Sources */,
 				3B6F6E4F2900BF2000242495 /* ContentView.swift in Sources */,
 				3B6F6E4D2900BF2000242495 /* FreshFridgeApp.swift in Sources */,
+				3BD0CA1E29186EA700489700 /* FirstScreen.swift in Sources */,
 				01E11978290750DE00EF825E /* Item.swift in Sources */,
 				01E1197A290752EC00EF825E /* ItemListViewModel.swift in Sources */,
 				01E1197629074F7100EF825E /* ItemRepository.swift in Sources */,

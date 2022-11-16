@@ -8,43 +8,46 @@
 import SwiftUI
 import CoreData
 
+
 struct ContentView: View {
     @Environment(\.managedObjectContext) private var viewContext
     @ObservedObject var itemListViewModel : ItemListViewModel
-    @FetchRequest(
-        sortDescriptors: [NSSortDescriptor(keyPath: \Item.timestamp, ascending: true)],
-        animation: .default)
-    private var items: FetchedResults<Item>
+//    @FetchRequest(
+//        sortDescriptors: [NSSortDescriptor(keyPath: \Item.timestamp, ascending: true)],
+//        animation: .default)
 
     var body: some View {
-        FirstScreen()
-        NavigationView {
+       NavigationView {
+        Group {
             List {
-                ForEach(items) { item in
-                    NavigationLink {
-                        Text("Item at \(item.timestamp!, formatter: itemFormatter)")
-                    } label: {
-                        Text(item.timestamp!, formatter: itemFormatter)
+                ForEach(itemListViewModel.itemViewModels) { item in
+                        NavigationLink {
+                            Text("Item at")
+                        } label: {
+                            Text(item.id)
+                        }
                     }
+                    .onDelete(perform: deleteItems)
                 }
-                .onDelete(perform: deleteItems)
+
+        }
+        .toolbar {
+            ToolbarItem(placement: .navigationBarTrailing) {
+                EditButton()
             }
-            .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    EditButton()
-                }
-                ToolbarItem {
-                    Button(action: addInventoryItem) {
-                        Label("Add Item", systemImage: "plus")
-                    }
+            ToolbarItem {
+                Button(action: addInventoryItem) {
+                    Label("Add Item", systemImage: "plus")
                 }
             }
-            Text("Select an item")
         }
     }
+}
 
     private func addItem() {
         withAnimation {
+//            print(itemListViewModel.$itemViewModels.count())
+            
             let newItem = Item(context: viewContext)
             newItem.timestamp = Date()
 
@@ -65,7 +68,7 @@ struct ContentView: View {
     
     private func deleteItems(offsets: IndexSet) {
         withAnimation {
-            offsets.map { items[$0] }.forEach(viewContext.delete)
+//            offsets.map { items[$0] }.forEach(viewContext.delete)
 
             do {
                 try viewContext.save()

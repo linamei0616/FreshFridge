@@ -48,6 +48,7 @@ struct ContentView: View {
         withAnimation {
 //            print(itemListViewModel.$itemViewModels.count())
             
+            
             let newItem = Item(context: viewContext)
             newItem.timestamp = Date()
 
@@ -62,7 +63,7 @@ struct ContentView: View {
         }
     }
     private func addInventoryItem() {
-        let item = InventoryItem(id: "" , name: "banana")
+        let item = InventoryItem(id: "" , name: "banana", quantity: 2) // update this function to receive user inputs instead
         itemListViewModel.add(item)
     }
     

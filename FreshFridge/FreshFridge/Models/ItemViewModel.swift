@@ -21,9 +21,9 @@ class ItemViewModel: ObservableObject, Identifiable {
     self.item = item
     // 5
     $item
-          .compactMap { $0.id }
-      .assign(to: \.id, on: self)
-      .store(in: &cancellables)
+    .compactMap { $0.id }
+    .assign(to: \.id, on: self)
+    .store(in: &cancellables)
   }
 }
 

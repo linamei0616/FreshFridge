@@ -52,5 +52,17 @@ class ItemRepository: ObservableObject {
       fatalError("Unable to add item: \(error.localizedDescription).")
     }
   }
+    
+    func remove(_ item: InventoryItem) {
+      // 1
+      guard let itemId = item.id else { return }
+
+      // 2
+      store.collection(path).document(itemId).delete { error in
+        if let error = error {
+          print("Unable to remove inventoryItem: \(error.localizedDescription)")
+        }
+      }
+    }
 }
 

@@ -26,6 +26,7 @@ struct FreshFridgeApp: App {
 
     var body: some Scene {
         WindowGroup {
+//            FirstScreen()
             ContentView(itemListViewModel: ItemListViewModel())
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }

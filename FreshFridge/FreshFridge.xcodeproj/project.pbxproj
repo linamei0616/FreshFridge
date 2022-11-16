@@ -20,6 +20,7 @@
 		01E1197629074F7100EF825E /* ItemRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E1197529074F7100EF825E /* ItemRepository.swift */; };
 		01E11978290750DE00EF825E /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E11977290750DE00EF825E /* Item.swift */; };
 		01E1197A290752EC00EF825E /* ItemListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E11979290752EC00EF825E /* ItemListViewModel.swift */; };
+		3B1FEF40292305EE009873ED /* ItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1FEF3F292305EE009873ED /* ItemViewModel.swift */; };
 		3B6F6E4D2900BF2000242495 /* FreshFridgeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6F6E4C2900BF2000242495 /* FreshFridgeApp.swift */; };
 		3B6F6E4F2900BF2000242495 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6F6E4E2900BF2000242495 /* ContentView.swift */; };
 		3B6F6E512900BF2100242495 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B6F6E502900BF2100242495 /* Assets.xcassets */; };
@@ -37,6 +38,7 @@
 		01E1197529074F7100EF825E /* ItemRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemRepository.swift; sourceTree = "<group>"; };
 		01E11977290750DE00EF825E /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		01E11979290752EC00EF825E /* ItemListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemListViewModel.swift; sourceTree = "<group>"; };
+		3B1FEF3F292305EE009873ED /* ItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemViewModel.swift; sourceTree = "<group>"; };
 		3B6F6E492900BF2000242495 /* FreshFridge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FreshFridge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B6F6E4C2900BF2000242495 /* FreshFridgeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FreshFridgeApp.swift; sourceTree = "<group>"; };
 		3B6F6E4E2900BF2000242495 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -73,9 +75,6 @@
 		3B6F6E402900BF2000242495 = {
 			isa = PBXGroup;
 			children = (
-				01E1197529074F7100EF825E /* ItemRepository.swift */,
-				01E11977290750DE00EF825E /* Item.swift */,
-				01E11979290752EC00EF825E /* ItemListViewModel.swift */,
 				3B6F6E4B2900BF2000242495 /* FreshFridge */,
 				3B6F6E4A2900BF2000242495 /* Products */,
 			);
@@ -92,12 +91,11 @@
 		3B6F6E4B2900BF2000242495 /* FreshFridge */ = {
 			isa = PBXGroup;
 			children = (
+				01E1197529074F7100EF825E /* ItemRepository.swift */,
+				01E11977290750DE00EF825E /* Item.swift */,
 				3B6F6E4C2900BF2000242495 /* FreshFridgeApp.swift */,
-				3B6F6E4E2900BF2000242495 /* ContentView.swift */,
-				3BD0CA1D29186EA700489700 /* FirstScreen.swift */,
-				3BD0CA1F29187C5C00489700 /* MainView.swift */,
-				3BD0CA2329187CDD00489700 /* ProfileView.swift */,
-				3BD0CA2129187CB300489700 /* RecipeView.swift */,
+				3BC8D639292584ED00A55011 /* Models */,
+				3BC8D638292584C700A55011 /* Views */,
 				3B6F6E502900BF2100242495 /* Assets.xcassets */,
 				3B6F6E552900BF2100242495 /* Persistence.swift */,
 				3B6F6E572900BF2100242495 /* FreshFridge.xcdatamodeld */,
@@ -113,6 +111,27 @@
 				3B6F6E532900BF2100242495 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		3BC8D638292584C700A55011 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				3BD0CA1F29187C5C00489700 /* MainView.swift */,
+				3BD0CA2129187CB300489700 /* RecipeView.swift */,
+				3BD0CA2329187CDD00489700 /* ProfileView.swift */,
+				3BD0CA1D29186EA700489700 /* FirstScreen.swift */,
+				3B6F6E4E2900BF2000242495 /* ContentView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		3BC8D639292584ED00A55011 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				01E11979290752EC00EF825E /* ItemListViewModel.swift */,
+				3B1FEF3F292305EE009873ED /* ItemViewModel.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -205,6 +224,7 @@
 				3B6F6E592900BF2100242495 /* FreshFridge.xcdatamodeld in Sources */,
 				3B6F6E4F2900BF2000242495 /* ContentView.swift in Sources */,
 				3BD0CA2229187CB300489700 /* RecipeView.swift in Sources */,
+				3B1FEF40292305EE009873ED /* ItemViewModel.swift in Sources */,
 				3B6F6E4D2900BF2000242495 /* FreshFridgeApp.swift in Sources */,
 				3BD0CA1E29186EA700489700 /* FirstScreen.swift in Sources */,
 				01E11978290750DE00EF825E /* Item.swift in Sources */,

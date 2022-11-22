@@ -6,30 +6,24 @@
 //
 
 import SwiftUI
-import CoreData
-
 
 struct ContentView: View {
-    @Environment(\.managedObjectContext) private var viewContext
     @ObservedObject var itemListViewModel : ItemListViewModel
-//    @FetchRequest(
-//        sortDescriptors: [NSSortDescriptor(keyPath: \Item.timestamp, ascending: true)],
-//        animation: .default)
-
+//    @Published var itemRepository = ItemRepository()
     var body: some View {
        NavigationView {
         Group {
             List {
                 ForEach(itemListViewModel.itemViewModels) { item in
-                        NavigationLink {
-                            Text("Item at")
-                        } label: {
-                            Text(item.id)
-                        }
+                    
+//                        NavigationLink {
+//                            Text("Item at")
+//                        } label: {
+//                            Text(item.name) // retrieved from the model
+//                        }
+                    ItemView(itemViewModel: item)
                     }
-                    .onDelete(perform: deleteItems)
                 }
-
         }
         .toolbar {
             ToolbarItem(placement: .navigationBarTrailing) {
@@ -43,44 +37,15 @@ struct ContentView: View {
         }
     }
 }
-
-    private func addItem() {
-        withAnimation {
-//            print(itemListViewModel.$itemViewModels.count())
-            
-            
-            let newItem = Item(context: viewContext)
-            newItem.timestamp = Date()
-
-            do {
-                try viewContext.save()
-            } catch {
-                // Replace this implementation with code to handle the error appropriately.
-                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-                let nsError = error as NSError
-                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
-            }
-        }
-    }
     private func addInventoryItem() {
-        let item = InventoryItem(id: "" , name: "banana", quantity: 2) // update this function to receive user inputs instead
+        /*
+         To-Do:
+         update this function to receive user inputs instead
+         */
+        let item = InventoryItem(id: "" , name: "banana", quantity: 2)
         itemListViewModel.add(item)
     }
-    
-    private func deleteItems(offsets: IndexSet) {
-        withAnimation {
-//            offsets.map { items[$0] }.forEach(viewContext.delete)
 
-            do {
-                try viewContext.save()
-            } catch {
-                // Replace this implementation with code to handle the error appropriately.
-                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-                let nsError = error as NSError
-                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
-            }
-        }
-    }
 }
 
 private let itemFormatter: DateFormatter = {
@@ -92,6 +57,12 @@ private let itemFormatter: DateFormatter = {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView(itemListViewModel: ItemListViewModel()).environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
+        let item = InventoryItem(name: "Banana", quantity: 5)
+        let itemViewModel = ItemViewModel(item: item)
+        let itemListViewModel = ItemListViewModel()
+//        itemListViewModel.itemViewModels.append(itemViewModel)
+//        itemListViewModel.itemViewModels = [itemViewModel]
+//        ContentView(itemListViewModel: itemListViewModel)
+        ContentView(itemListViewModel: ItemListViewModel())
     }
 }

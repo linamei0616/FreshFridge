@@ -9,21 +9,29 @@ import Combine
 
 // 1
 class ItemViewModel: ObservableObject, Identifiable {
-  // 2
-  private let itemRepository = ItemRepository()
-  @Published var item: InventoryItem
-  // 3
-  private var cancellables: Set<AnyCancellable> = []
-  // 4
-  var id = ""
+    // 2
+    private let itemRepository = ItemRepository()
+    @Published var item: InventoryItem
+    // 3
+    private var cancellables: Set<AnyCancellable> = []
+    // 4
+    var id = "" // need to add all variables here as well
+    var name = ""
+    var quantity = 0
 
-  init(item: InventoryItem) {
-    self.item = item
-    // 5
-    $item
-    .compactMap { $0.id }
-    .assign(to: \.id, on: self)
-    .store(in: &cancellables)
-  }
+    init(item: InventoryItem) {
+        self.item = item
+        // 5
+        $item
+        .compactMap { $0.id }
+        .assign(to: \.id, on: self)
+        .store(in: &cancellables)
+    }
+    func remove() {
+        itemRepository.remove(item)
+    }
+    func update() {
+        itemRepository.update(item)
+    }
 }
 

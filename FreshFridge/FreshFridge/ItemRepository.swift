@@ -34,7 +34,6 @@ class ItemRepository: ObservableObject {
             print("Error getting items: \(error.localizedDescription)")
             return
           }
-
           // 5
           self.items = querySnapshot?.documents.compactMap { document in
             // 6
@@ -63,6 +62,14 @@ class ItemRepository: ObservableObject {
           print("Unable to remove inventoryItem: \(error.localizedDescription)")
         }
       }
+    }
+    func update(_ item: InventoryItem) {
+        guard let id = item.id else { return }
+        do {
+            try store.collection(path).document(id).setData(from: item)
+        } catch  {
+            fatalError("Unable to update item:  \(error.localizedDescription)")
+        }
     }
 }
 

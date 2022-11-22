@@ -20,15 +20,12 @@ class AppDelegate: NSObject, UIApplicationDelegate {
 
 @main
 struct FreshFridgeApp: App {
-    let persistenceController = PersistenceController.shared
      // register app delegate for Firebase setup
      @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
 
     var body: some Scene {
         WindowGroup {
-//            FirstScreen()
             ContentView(itemListViewModel: ItemListViewModel())
-                .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }
 }

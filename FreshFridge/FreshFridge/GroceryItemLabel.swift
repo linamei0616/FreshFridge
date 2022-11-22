@@ -31,6 +31,6 @@ struct GroceryItemLabel: View {
                     )
             .font(.system(size: 18))
             .padding()
-            .frame(height: 90)
+            .frame(width: 300, height: 90)
     }
 }

@@ -11,40 +11,30 @@ import Foundation
 import SwiftUI
 
 struct InventoryItemView: View {
+    //MARK: - Variables
     var inventoryItemViewModel: ItemViewModel
     @State var showContent: Bool = false
     @State var viewState = CGSize.zero
     @State var showAlert = false
+    @State var alert = UIAlertController(title: "Confirm", message: "Are you sure you want to delete this?", preferredStyle: .alert)
     
+    //MARK: - Colors
+    let lightGrey = Color(red: 0.45, green: 0.57, blue: 0.72)
+    let pastelBlue = Color(red: 0.77, green: 0.83, blue: 0.92)
+    
+    //MARK: - Functs
+    func alertInformation(name: String, quantity: Int) -> String {
+        return name + "\n" + "Quantity: " + quantity.codingKey.stringValue + "\n Expiration Date: " + "\n" + "Tips: "
+    }
+    
+    //MARK: - Body
     var body: some View {
         ZStack(alignment: .center) {
             backView.opacity(showContent ? 1 : 0)
             frontView.opacity(showContent ? 0 : 1)
         }
-        .frame(width: 250, height: 400)
         .background(Color.orange)
         .cornerRadius(20)
-        .shadow(color: Color(.blue).opacity(0.3), radius: 5, x: 10, y: 10)
-        .rotation3DEffect(.degrees(showContent ? 180.0 : 0.0), axis: (x: 0, y: -1, z: 0))
-        .offset(x: viewState.width, y: viewState.height)
-        //    .animation(.spring(response: 0.6, dampingFraction: 0.8, blendDuration: 0))
-        .onTapGesture {
-            withAnimation {
-                showContent.toggle()
-            }
-        }
-        .gesture(
-            DragGesture()
-                .onChanged { value in
-                    viewState = value.translation
-                }
-                .onEnded { value in
-                    if value.location.y < value.startLocation.y - 40.0 {
-                        showAlert.toggle()
-                    }
-                    viewState = .zero
-                }
-        )
         .alert(isPresented: $showAlert) {
             Alert(
                 title: Text("Remove InventoryItem"),
@@ -66,13 +56,6 @@ struct InventoryItemView: View {
                 .multilineTextAlignment(.center)
                 .padding(20.0)
             Spacer()
-            //      if !inventoryItemViewModel.item.successful {
-            //        Text("You answered this one incorrectly before")
-            //          .foregroundColor(.white)
-            //          .font(.system(size: 11.0))
-            //          .fontWeight(.bold)
-            //          .padding()
-            //      }
         }
     }
     
@@ -85,62 +68,8 @@ struct InventoryItemView: View {
                 .font(.body)
                 .padding(20.0)
                 .multilineTextAlignment(.center)
-            //        .animation(.easeInOut)
             Spacer()
-            //      // 2
-            //      HStack(spacing: 40) {
-            //        Button(action: markInventoryItemAsSuccesful) {
-            //          Image(systemName: "hand.thumbsup.fill")
-            //            .padding()
-            //            .background(Color.green)
-            //            .font(.title)
-            //            .foregroundColor(.white)
-            //            .clipShape(Circle())
-            //        }
-            //        Button(action: markInventoryItemAsUnsuccesful) {
-            //          Image(systemName: "hand.thumbsdown.fill")
-            //            .padding()
-            //            .background(Color.blue)
-            //            .font(.title)
-            //            .foregroundColor(.white)
-            //            .clipShape(Circle())
-            //        }
-            //      }
-            //      .padding()
-            //    }
-            //    .rotation3DEffect(.degrees(180), axis: (x: 0.0, y: 1.0, z: 0.0))
-            //  }
-            
-            //  // 1
-            //  private func markInventoryItemAsUnsuccesful() {
-            //    var updatedInventoryItem = inventoryItemViewModel.item
-            //    updatedInventoryItem.successful = false
-            //    update(inventoryItem: updatedInventoryItem)
-            //  }
-            //
-            //  // 2
-            //  private func markInventoryItemAsSuccesful() {
-            //    var updatedInventoryItem = inventoryItemViewModel.item
-            ////    updatedInventoryItem.successful = true
-            //    update(inventoryItem: updatedInventoryItem)
-            //  }
-            //
-            //  // 3
-            //  func update(inventoryItem: InventoryItem) {
-            ////    inventoryItemViewModel.update(inventoryItem: item)
-            //    showContent.toggle()
-            //  }
-            //}
-            //
-            //struct InventoryItemView_Previews: PreviewProvider {
-            //  static var previews: some View {
-            //    let inventoryItem = testData[0]
-            //    return InventoryItemView(inventoryItemViewModel: InventoryItemViewModel(inventoryItem: inventoryItem))
-            //
-            
-            
+           
         }
-        //
-        
     }
 }

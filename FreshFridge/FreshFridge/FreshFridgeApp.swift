@@ -21,11 +21,13 @@ class AppDelegate: NSObject, UIApplicationDelegate {
 @main
 struct FreshFridgeApp: App {
      // register app delegate for Firebase setup
-     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
-
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
+    @StateObject var model = ItemListViewModel()
+    
     var body: some Scene {
         WindowGroup {
-            ContentView(itemListViewModel: ItemListViewModel())
+            ContentView()
+                .environmentObject(model)
         }
     }
 }

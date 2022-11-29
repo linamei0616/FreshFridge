@@ -8,19 +8,19 @@
 import SwiftUI
 
 struct ItemView: View {
-    @ObservedObject var itemViewModel: ItemViewModel
+    @State var itemViewModel: ItemViewModel
     var body: some View {
         HStack {
-            Text(itemViewModel.name)
-                .foregroundColor(Color.black)
+            Text(itemViewModel.item.name)
+              //  .foregroundColor(Color.black)
         }
     }
 }
 
-//struct ItemView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        ItemView(itemViewModel: ItemViewModel(item: InventoryItem(name: "banana", quantity: 2)), body: some View)
-//
-//
-//    }
-//}
+struct ItemView_Previews: PreviewProvider {
+    static var previews: some View {
+        ItemView(itemViewModel: ItemViewModel(item: InventoryItem(name: "banana", quantity: 2)))
+
+
+    }
+}

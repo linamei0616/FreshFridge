@@ -13,6 +13,8 @@ struct InventoryItemListView: View {
     
     //MARK: - Variables
     @ObservedObject var inventoryItemListViewModel = ItemListViewModel() // firebase model
+    var inventoryItemViewModel: ItemViewModel
+
     @State var showForm = false
     @State var groceryList: [GroceryItem] = GroceryItem.getFruits() // Salvador's
     @State var groceryItem = "" // Salvador's
@@ -74,57 +76,44 @@ struct InventoryItemListView: View {
     func alertInformation(name: String, quantity: Int) -> String {
         return name + "\n" + "Quantity: " + quantity.codingKey.stringValue + "\n Expiration Date: " + "\n" + "Tips: "
     }
+    
     //MARK: - Body
     var body: some View {
         NavigationView {
             VStack(alignment: .center) {
-                Spacer()
-                //14. Comment the add section
-                HStack{
-                    //MARK: - Temporary Add Grocery Item
-                    TextField("add grocery item", text: $groceryItem)
-                        .textFieldStyle(.roundedBorder)
-                        .onSubmit {
-                            addItemtoList()
-                        }
-                    Button {
-                        addItemtoList()
-                    } label: {
-                        Image(systemName: "plus.circle.fill")
-                            .font(.system(size: 30))
-                            .foregroundColor(Color.green)
-                    }
-                }
-                
-                //MARK: - Displaying static results temporarily
-                ForEach(searchResults) { result in
-                    Button(action: {
-                        showingAlert=true
-                    }) {
-                        GroceryItemLabel(name: result.name, image: "")
-                    }
-                    .foregroundColor(lightGrey)
-                    .alert(alertInformation(name: result.name, quantity: result.quantity),isPresented: $showingAlert) {
-                        Button("Confirm", role: .cancel) { }
-                    }
-                }
-                .onDelete(perform: delete)
-                .onMove(perform: move)
-                .searchable(text: $search, placement: .navigationBarDrawer(displayMode: .always))
-                
                 //MARK: - Firebase
                 GeometryReader { geometry in
                     ScrollView(.horizontal) {
-                        HStack(spacing: 10) {
-                            ForEach(inventoryItemListViewModel.itemViewModels) { inventoryItemViewModel in
-                                InventoryItemView(inventoryItemViewModel: inventoryItemViewModel)
-                                    .padding([.leading, .trailing])
-                                //                }
+                        VStack(spacing: 10) {
+                            ForEach(inventoryItemListViewModel.itemViewModels) {
+                                result in Button(action: {
+                                    showingAlert=true }) {
+                                        GroceryItemLabel(name: result.item.name, image: "")
+                                    }
+                                    .foregroundColor(lightGrey)
+//                                    .alert(alertInformation(name: result.item.name, quantity: result.item.quantity),isPresented: $showingAlert) {
+//                                        Button("Confirm", role: .cancel) { }
+//                                    }
+                                    .alert(isPresented: $showingAlert) {
+                                        Alert(
+                                            title: Text("Remove InventoryItem"),
+                                            message: Text("Are you sure you want to remove this inventoryItem?"),
+                                            primaryButton: .destructive(Text("Remove")) {
+                                                inventoryItemViewModel.remove()
+                                            },
+                                            secondaryButton: .cancel())
+                                    }
+                                //                            ForEach(inventoryItemListViewModel.itemViewModels) { inventoryItemViewModel in
+                                //                                InventoryItemView(inventoryItemViewModel: inventoryItemViewModel)
+                                //                                GroceryItemLabel(name: inventoryItemViewModel.item.name, image: "")
+                                
                             }
+                            .onDelete(perform: delete)
+                            .onMove(perform: move)
+                            .searchable(text: $search, placement: .navigationBarDrawer(displayMode: .always))
                         }
                     }
                 }
-                Spacer()
             }
             // when button is pressed
             .sheet(isPresented: $showForm) {
@@ -135,9 +124,7 @@ struct InventoryItemListView: View {
                 Image(systemName: "plus")
                     .font(.title)
             })
-            
         }
-        
         .navigationViewStyle(StackNavigationViewStyle())
         
     }
@@ -145,6 +132,6 @@ struct InventoryItemListView: View {
 
 struct InventoryItemListView_Previews: PreviewProvider {
   static var previews: some View {
-    InventoryItemListView(inventoryItemListViewModel: ItemListViewModel())
+      InventoryItemListView(inventoryItemListViewModel: ItemListViewModel(), inventoryItemViewModel: ItemViewModel(item: InventoryItem(name: "", quantity: 0)))
   }
 }

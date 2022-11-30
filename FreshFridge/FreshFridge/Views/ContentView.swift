@@ -11,31 +11,32 @@ struct ContentView: View {
     @EnvironmentObject var itemListViewModel : ItemListViewModel
 //    @Published var itemRepository = ItemRepository()
     var body: some View {
-       NavigationView {
-        Group {
-            List {
-                ForEach(itemListViewModel.itemViewModels) { item in
-                    
-//                        NavigationLink {
-//                            Text("Item at")
-//                        } label: {
-//                            Text(item.name) // retrieved from the model
-//                        }
-                    ItemView(itemViewModel: item)
-                    }
-                }
-        }
-        .toolbar {
-            ToolbarItem(placement: .navigationBarTrailing) {
-                EditButton()
-            }
-            ToolbarItem {
-                Button(action: addInventoryItem) {
-                    Label("Add Item", systemImage: "plus")
-                }
-            }
-        }
-    }
+//       NavigationView {
+//        Group {
+//            List {
+//                ForEach(itemListViewModel.itemViewModels) { item in
+//
+////                        NavigationLink {
+////                            Text("Item at")
+////                        } label: {
+////                            Text(item.name) // retrieved from the model
+////                        }
+//                    ItemView(itemViewModel: item)
+//                    }
+//                }
+//        }
+//        .toolbar {
+//            ToolbarItem(placement: .navigationBarTrailing) {
+//                EditButton()
+//            }
+//            ToolbarItem {
+//                Button(action: addInventoryItem) {
+//                    Label("Add Item", systemImage: "plus")
+//                }
+//            }
+//        }
+//    }
+       InventoryItemListView(showForm: false)
 }
     private func addInventoryItem() {
         /*

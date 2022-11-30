@@ -12,13 +12,13 @@ import Firebase
 struct InventoryItemListView: View {
     
     //MARK: - Variables
-    @ObservedObject var inventoryItemListViewModel = ItemListViewModel() // firebase model
-    var inventoryItemViewModel: ItemViewModel
+    @EnvironmentObject var inventoryItemListViewModel : ItemListViewModel // firebase model
+    var inventoryItemViewModel: ItemViewModel? = nil
 
     @State var showForm = false
-    @State var groceryList: [GroceryItem] = GroceryItem.getFruits() // Salvador's
-    @State var groceryItem = "" // Salvador's
-    @State var groceryQuantity = 0 // Salvador's
+//    @State var groceryList: [GroceryItem] = GroceryItem.getFruits() // Salvador's
+//    @State var groceryItem = "" // Salvador's
+//    @State var groceryQuantity = 0 // Salvador's
     @State var alert = UIAlertController(title: "Confirm", message: "Are you sure you want to delete this?", preferredStyle: .alert)
     @State private var showingAlert = false
     @State var search = "" // Search Bar
@@ -28,33 +28,33 @@ struct InventoryItemListView: View {
     let pastelBlue = Color(red: 0.77, green: 0.83, blue: 0.92)
     
     //7. Update the dataType for the computed property from String to GroceryItem.
-    var searchResults: [GroceryItem]{
-        if search.isEmpty{
-            return groceryList
-        } else{
-            return groceryList.filter {
-                //8. Add the name property to filter from the name
-                $0.name.lowercased().contains( search.lowercased())
-            }
-        }
-    }
-    
-    //MARK: - Salvador Functions
-    func addItemtoList(){
-        if groceryItem != ""{
-            groceryList.append(GroceryItem(name: groceryItem, quantity: groceryQuantity, image: "apple", color: .green, description: "N/A"))
-            groceryItem = ""
-            groceryQuantity = 1
-        }
-    }
-    func delete(at indexes: IndexSet){
-        if let first = indexes.first{
-            groceryList.remove(at: first)
-        }
-    }
-    func move(from index: IndexSet, to destination: Int){
-        groceryList.move(fromOffsets: index, toOffset: destination)
-    }
+//    var searchResults: [GroceryItem]{
+//        if search.isEmpty{
+//            return groceryList
+//        } else{
+//            return groceryList.filter {
+//                //8. Add the name property to filter from the name
+//                $0.name.lowercased().contains( search.lowercased())
+//            }
+//        }
+//    }
+//
+//    //MARK: - Salvador Functions
+//    func addItemtoList(){
+//        if groceryItem != ""{
+//            groceryList.append(GroceryItem(name: groceryItem, quantity: groceryQuantity, image: "apple", color: .green, description: "N/A"))
+//            groceryItem = ""
+//            groceryQuantity = 1
+//        }
+//    }
+//    func delete(at indexes: IndexSet){
+//        if let first = indexes.first{
+//            groceryList.remove(at: first)
+//        }
+//    }
+//    func move(from index: IndexSet, to destination: Int){
+//        groceryList.move(fromOffsets: index, toOffset: destination)
+//    }
     
     //MARK: - Firebase functs
     func addItem() {
@@ -99,7 +99,7 @@ struct InventoryItemListView: View {
                                             title: Text("Remove InventoryItem"),
                                             message: Text("Are you sure you want to remove this inventoryItem?"),
                                             primaryButton: .destructive(Text("Remove")) {
-                                                inventoryItemViewModel.remove()
+                                                inventoryItemViewModel?.remove()
                                             },
                                             secondaryButton: .cancel())
                                     }
@@ -108,8 +108,8 @@ struct InventoryItemListView: View {
                                 //                                GroceryItemLabel(name: inventoryItemViewModel.item.name, image: "")
                                 
                             }
-                            .onDelete(perform: delete)
-                            .onMove(perform: move)
+//                            .onDelete(perform: delete)
+//                            .onMove(perform: move)
                             .searchable(text: $search, placement: .navigationBarDrawer(displayMode: .always))
                         }
                     }
@@ -132,6 +132,7 @@ struct InventoryItemListView: View {
 
 struct InventoryItemListView_Previews: PreviewProvider {
   static var previews: some View {
-      InventoryItemListView(inventoryItemListViewModel: ItemListViewModel(), inventoryItemViewModel: ItemViewModel(item: InventoryItem(name: "", quantity: 0)))
+      InventoryItemListView()
+          .environmentObject(ItemListViewModel())
   }
 }

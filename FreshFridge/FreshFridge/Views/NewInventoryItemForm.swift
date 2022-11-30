@@ -41,7 +41,7 @@ struct NewInventoryItemForm: View {
 
   private func addInventoryItem() {
     // 1
-    let inventoryItem = InventoryItem(name: "Apple", quantity: 5)
+      let inventoryItem = InventoryItem(name: question, quantity: Int(answer) ?? 0)
     // 2
     inventoryItemListViewModel.add(inventoryItem)
     // 3

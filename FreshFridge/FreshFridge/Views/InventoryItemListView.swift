@@ -83,7 +83,7 @@ struct InventoryItemListView: View {
             VStack(alignment: .center) {
                 //MARK: - Firebase
                 GeometryReader { geometry in
-                    ScrollView(.horizontal) {
+                    ScrollView(.vertical) {
                         VStack(spacing: 10) {
                             ForEach(inventoryItemListViewModel.itemViewModels) {
                                 result in Button(action: {

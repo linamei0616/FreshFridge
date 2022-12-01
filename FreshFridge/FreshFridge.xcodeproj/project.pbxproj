@@ -26,7 +26,6 @@
 		3B6F6E512900BF2100242495 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B6F6E502900BF2100242495 /* Assets.xcassets */; };
 		3B6F6E542900BF2100242495 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B6F6E532900BF2100242495 /* Preview Assets.xcassets */; };
 		3BC8D63F292598FB00A55011 /* InventoryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC8D63E292598FB00A55011 /* InventoryItem.swift */; };
-		3BD0CA1E29186EA700489700 /* FirstScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BD0CA1D29186EA700489700 /* FirstScreen.swift */; };
 		3BD0CA2229187CB300489700 /* RecipeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BD0CA2129187CB300489700 /* RecipeView.swift */; };
 		3BD0CA2429187CDD00489700 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BD0CA2329187CDD00489700 /* ProfileView.swift */; };
 		3BF33775292C422400AF0359 /* ItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF33774292C422400AF0359 /* ItemView.swift */; };
@@ -35,6 +34,7 @@
 		3BF3377B292C50A600AF0359 /* GroceryItemLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF3377A292C50A600AF0359 /* GroceryItemLabel.swift */; };
 		3BF3377D292C512F00AF0359 /* InventoryItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF3377C292C512F00AF0359 /* InventoryItemView.swift */; };
 		3BF3377F292C514A00AF0359 /* NewInventoryItemForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF3377E292C514A00AF0359 /* NewInventoryItemForm.swift */; };
+		84B9D8F22939080C00AF1136 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84B9D8F12939080C00AF1136 /* Launch Screen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,7 +49,6 @@
 		3B6F6E502900BF2100242495 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3B6F6E532900BF2100242495 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		3BC8D63E292598FB00A55011 /* InventoryItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryItem.swift; sourceTree = "<group>"; };
-		3BD0CA1D29186EA700489700 /* FirstScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstScreen.swift; sourceTree = "<group>"; };
 		3BD0CA2129187CB300489700 /* RecipeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeView.swift; sourceTree = "<group>"; };
 		3BD0CA2329187CDD00489700 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		3BF33774292C422400AF0359 /* ItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemView.swift; sourceTree = "<group>"; };
@@ -58,6 +57,7 @@
 		3BF3377A292C50A600AF0359 /* GroceryItemLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroceryItemLabel.swift; sourceTree = "<group>"; };
 		3BF3377C292C512F00AF0359 /* InventoryItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InventoryItemView.swift; sourceTree = "<group>"; };
 		3BF3377E292C514A00AF0359 /* NewInventoryItemForm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewInventoryItemForm.swift; sourceTree = "<group>"; };
+		84B9D8F12939080C00AF1136 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,7 +128,7 @@
 				3BF3377E292C514A00AF0359 /* NewInventoryItemForm.swift */,
 				3BF3377C292C512F00AF0359 /* InventoryItemView.swift */,
 				3BF33776292C4EE500AF0359 /* InventoryItemListView.swift */,
-				3BD0CA1D29186EA700489700 /* FirstScreen.swift */,
+				84B9D8F12939080C00AF1136 /* Launch Screen.storyboard */,
 				3B6F6E4E2900BF2000242495 /* ContentView.swift */,
 				3BF33774292C422400AF0359 /* ItemView.swift */,
 				3BD0CA2129187CB300489700 /* RecipeView.swift */,
@@ -220,6 +220,7 @@
 			files = (
 				3B6F6E542900BF2100242495 /* Preview Assets.xcassets in Resources */,
 				3B6F6E512900BF2100242495 /* Assets.xcassets in Resources */,
+				84B9D8F22939080C00AF1136 /* Launch Screen.storyboard in Resources */,
 				01E119612907494400EF825E /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -241,7 +242,6 @@
 				3BF3377D292C512F00AF0359 /* InventoryItemView.swift in Sources */,
 				3BF33777292C4EE600AF0359 /* InventoryItemListView.swift in Sources */,
 				01850559292C642800601DC5 /* MainView.swift in Sources */,
-				3BD0CA1E29186EA700489700 /* FirstScreen.swift in Sources */,
 				3BC8D63F292598FB00A55011 /* InventoryItem.swift in Sources */,
 				01E1197A290752EC00EF825E /* ItemListViewModel.swift in Sources */,
 				3BF3377B292C50A600AF0359 /* GroceryItemLabel.swift in Sources */,
@@ -381,6 +381,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -410,6 +411,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (

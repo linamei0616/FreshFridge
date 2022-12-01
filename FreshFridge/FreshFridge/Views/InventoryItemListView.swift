@@ -50,7 +50,7 @@ struct InventoryItemListView: View {
                             ForEach(inventoryItemListViewModel.itemViewModels) {
                                 result in Button(action: {
                                     showingAlert=true }) {
-                                        GroceryItemLabel(name: result.item.name, image: "")
+                                        GroceryItemLabel(name: result.item.name, image: "", expirationDate: ExpDates[result.item.name] ?? 10)
                                     }
                                     .foregroundColor(lightGrey)
                                     .alert(isPresented: $showingAlert) {

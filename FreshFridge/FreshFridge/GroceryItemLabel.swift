@@ -14,7 +14,9 @@ struct GroceryItemLabel: View {
     var image:String = ""
     let lightGrey = Color(red: 0.45, green: 0.57, blue: 0.72)
     let id:String = ""
-    let expirationDate:String = "5" // temporary
+    let expirationDate:Int
+    
+//    self.expirationDate = ExpDates[name] ?? 10 // default value: 10
     
     var body: some View {
         RoundedRectangle(cornerRadius: 25)
@@ -22,7 +24,7 @@ struct GroceryItemLabel: View {
             .overlay(VStack{
                 Text(name)
                 HStack {
-                    Text(expirationDate)
+                    Text(String(expirationDate))
                         .foregroundColor(Color.red)
                     Text("days remaining")
                         .foregroundColor(lightGrey)

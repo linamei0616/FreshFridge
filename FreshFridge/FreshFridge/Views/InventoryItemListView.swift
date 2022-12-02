@@ -110,6 +110,7 @@ struct InventoryItemListView: View {
                             }
 //                            .onDelete(perform: delete)
 //                            .onMove(perform: move)
+                            
                             .searchable(text: $search, placement: .navigationBarDrawer(displayMode: .always))
                         }
                     }
@@ -136,3 +137,10 @@ struct InventoryItemListView_Previews: PreviewProvider {
           .environmentObject(ItemListViewModel())
   }
 }
+//func removeAll(where shouldBeRemoved: (Self.Element) throws -> Bool) rethrows
+//
+//{var phrase = "The rain in Spain stays mainly in the plain."
+//
+//    let vowels: Set<Character> = ["a", "e", "i", "o", "u"]
+//    phrase.removeAll(where: { vowels.contains($0) })}
+//// phrase == "Th rn n Spn stys mnly n th pln."}

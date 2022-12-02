@@ -44,6 +44,7 @@ struct NewInventoryItemForm: View {
       let inventoryItem = InventoryItem(name: question, quantity: Int(answer) ?? 0)
     // 2
     inventoryItemListViewModel.add(inventoryItem)
+      inventoryItemListViewModel.makenotification(inventoryItem)
     // 3
     presentationMode.wrappedValue.dismiss()
   }

@@ -37,6 +37,9 @@ class ItemListViewModel: ObservableObject {
     func add(_ item: InventoryItem) {
         itemRepository.add(item)
     }
+    func makenotification(_ item: InventoryItem) {
+        itemRepository.makenotification(item)
+    }
     
     func remove(_ item: InventoryItem){
         itemRepository.remove(item)

@@ -37,7 +37,21 @@ struct ContentView: View {
 //        }
 //    }
        InventoryItemListView(showForm: false)
+        
+            .onAppear{
+                UNUserNotificationCenter.current().requestAuthorization(options:[.alert, .badge, .sound]) { success, error in
+                    if success {
+                        print(success)
+                        
+                    }
+                    else if let error = error{
+                        print(error.localizedDescription)
+                    }
+                }
+            }
 }
+    
+    
     private func addInventoryItem() {
         /*
          To-Do:

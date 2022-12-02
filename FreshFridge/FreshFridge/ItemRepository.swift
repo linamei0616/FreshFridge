@@ -9,7 +9,7 @@
 import FirebaseFirestore
 import FirebaseFirestoreSwift
 import Combine
-
+import UserNotifications
 // 2
 class ItemRepository: ObservableObject {
   // 3
@@ -51,6 +51,18 @@ class ItemRepository: ObservableObject {
       fatalError("Unable to add item: \(error.localizedDescription).")
     }
   }
+    
+    func makenotification(_ item: InventoryItem){
+        let content = UNMutableNotificationContent()
+        content.title = " \(item.name) About to Expire"
+        content.subtitle = "this will expire in 5 days!"
+        content.sound = UNNotificationSound.default
+        
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
+        
+        let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
+        UNUserNotificationCenter.current().add(request)
+    }
     
     func remove(_ item: InventoryItem) {
       // 1

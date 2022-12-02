@@ -16,10 +16,6 @@ struct InventoryItemListView: View {
     var inventoryItemViewModel: ItemViewModel? = nil
 
     @State var showForm = false
-//    @State var groceryList: [GroceryItem] = GroceryItem.getFruits() // Salvador's
-//    @State var groceryItem = "" // Salvador's
-//    @State var groceryQuantity = 0 // Salvador's
-    @State var alert = UIAlertController(title: "Confirm", message: "Are you sure you want to delete this?", preferredStyle: .alert)
     @State private var showingAlert = false
     @State var search = "" // Search Bar
     
@@ -27,54 +23,21 @@ struct InventoryItemListView: View {
     let lightGrey = Color(red: 0.45, green: 0.57, blue: 0.72)
     let pastelBlue = Color(red: 0.77, green: 0.83, blue: 0.92)
     
-    //7. Update the dataType for the computed property from String to GroceryItem.
-//    var searchResults: [GroceryItem]{
-//        if search.isEmpty{
-//            return groceryList
-//        } else{
-//            return groceryList.filter {
-//                //8. Add the name property to filter from the name
-//                $0.name.lowercased().contains( search.lowercased())
-//            }
-//        }
-//    }
-//
-//    //MARK: - Salvador Functions
-//    func addItemtoList(){
-//        if groceryItem != ""{
-//            groceryList.append(GroceryItem(name: groceryItem, quantity: groceryQuantity, image: "apple", color: .green, description: "N/A"))
-//            groceryItem = ""
-//            groceryQuantity = 1
-//        }
-//    }
-//    func delete(at indexes: IndexSet){
-//        if let first = indexes.first{
-//            groceryList.remove(at: first)
-//        }
-//    }
-//    func move(from index: IndexSet, to destination: Int){
-//        groceryList.move(fromOffsets: index, toOffset: destination)
-//    }
-    
     //MARK: - Firebase functs
-    func addItem() {
-        withAnimation {
-//            let newItem = InventoryItem(question: "Grocery Item?", answer: "banana")
-        }
-    }
+    // I commented this because I think the actual add function is in NewInventoryItemForm?
+//    func addInventoryItem() {
+//        let item = InventoryItem(name: "apple", quantity: 5)
+//        inventoryItemListViewModel.add(item)
+//    }
     
-    func addInventoryItem() {
-        let item = InventoryItem(name: "apple", quantity: 5)
-        inventoryItemListViewModel.add(item)
-    }
+//    func deleteItems() {
+//        let item = InventoryItem(name: "banana" , quantity: 5 )
+//        inventoryItemListViewModel.remove(item)
+//    }
     
-    func deleteItems(offsets: IndexSet) {
-        withAnimation {
-        }
-    }
-    
-    func alertInformation(name: String, quantity: Int) -> String {
-        return name + "\n" + "Quantity: " + quantity.codingKey.stringValue + "\n Expiration Date: " + "\n" + "Tips: "
+    func alertInformation(name: String, quantity: Int, expirationDate: Int) -> String {
+        return "Quantity: " + quantity.codingKey.stringValue + "\n Days Remaining: "  + String(expirationDate) + "\n" + "Tips: "
+        //+ ExpDates[name]?.codingKey.stringValue
     }
     
     //MARK: - Body
@@ -88,27 +51,20 @@ struct InventoryItemListView: View {
                             ForEach(inventoryItemListViewModel.itemViewModels) {
                                 result in Button(action: {
                                     showingAlert=true }) {
-                                        GroceryItemLabel(name: result.item.name, image: "")
+                                        GroceryItemLabel(name: result.item.name, image: "", expirationDate: ExpDates[result.item.name] ?? 10)
                                     }
                                     .foregroundColor(lightGrey)
-//                                    .alert(alertInformation(name: result.item.name, quantity: result.item.quantity),isPresented: $showingAlert) {
-//                                        Button("Confirm", role: .cancel) { }
-//                                    }
                                     .alert(isPresented: $showingAlert) {
                                         Alert(
-                                            title: Text("Remove InventoryItem"),
-                                            message: Text("Are you sure you want to remove this inventoryItem?"),
-                                            primaryButton: .destructive(Text("Remove")) {
+                                            title: Text(result.item.name),
+                                            message: Text(alertInformation(name: result.item.name, quantity: result.item.quantity, expirationDate: ExpDates[result.item.name] ?? 10)),
+                                            primaryButton: .destructive(Text("Edit")) {
                                                 inventoryItemViewModel?.remove()
                                             },
                                             secondaryButton: .cancel())
                                     }
-                                //                            ForEach(inventoryItemListViewModel.itemViewModels) { inventoryItemViewModel in
-                                //                                InventoryItemView(inventoryItemViewModel: inventoryItemViewModel)
-                                //                                GroceryItemLabel(name: inventoryItemViewModel.item.name, image: "")
-                                
                             }
-//                            .onDelete(perform: delete)
+//                            .onDelete(perform: deleteItems())
 //                            .onMove(perform: move)
                             .searchable(text: $search, placement: .navigationBarDrawer(displayMode: .always))
                         }
@@ -124,6 +80,10 @@ struct InventoryItemListView: View {
                 Image(systemName: "plus")
                     .font(.title)
             })
+//            .navigationBarItems(trailing: Button(action: { showForm.toggle() }) {
+//                Image(systemName: "minus")
+//                    .font(.title)
+//            })
         }
         .navigationViewStyle(StackNavigationViewStyle())
         

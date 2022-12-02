@@ -25,15 +25,14 @@
 		3B6F6E4F2900BF2000242495 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6F6E4E2900BF2000242495 /* ContentView.swift */; };
 		3B6F6E512900BF2100242495 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B6F6E502900BF2100242495 /* Assets.xcassets */; };
 		3B6F6E542900BF2100242495 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B6F6E532900BF2100242495 /* Preview Assets.xcassets */; };
+		3BAEA49629387576005510E1 /* ExpDateFunct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BAEA49529387576005510E1 /* ExpDateFunct.swift */; };
+		3BAEA49A29387D92005510E1 /* AmountWastedScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BAEA49929387D92005510E1 /* AmountWastedScreen.swift */; };
 		3BC8D63F292598FB00A55011 /* InventoryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC8D63E292598FB00A55011 /* InventoryItem.swift */; };
 		3BD0CA1E29186EA700489700 /* FirstScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BD0CA1D29186EA700489700 /* FirstScreen.swift */; };
-		3BD0CA2229187CB300489700 /* RecipeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BD0CA2129187CB300489700 /* RecipeView.swift */; };
 		3BD0CA2429187CDD00489700 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BD0CA2329187CDD00489700 /* ProfileView.swift */; };
 		3BF33775292C422400AF0359 /* ItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF33774292C422400AF0359 /* ItemView.swift */; };
 		3BF33777292C4EE600AF0359 /* InventoryItemListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF33776292C4EE500AF0359 /* InventoryItemListView.swift */; };
-		3BF33779292C4FB200AF0359 /* GroceryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF33778292C4FB200AF0359 /* GroceryItem.swift */; };
 		3BF3377B292C50A600AF0359 /* GroceryItemLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF3377A292C50A600AF0359 /* GroceryItemLabel.swift */; };
-		3BF3377D292C512F00AF0359 /* InventoryItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF3377C292C512F00AF0359 /* InventoryItemView.swift */; };
 		3BF3377F292C514A00AF0359 /* NewInventoryItemForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF3377E292C514A00AF0359 /* NewInventoryItemForm.swift */; };
 /* End PBXBuildFile section */
 
@@ -48,15 +47,14 @@
 		3B6F6E4E2900BF2000242495 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		3B6F6E502900BF2100242495 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3B6F6E532900BF2100242495 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		3BAEA49529387576005510E1 /* ExpDateFunct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpDateFunct.swift; sourceTree = "<group>"; };
+		3BAEA49929387D92005510E1 /* AmountWastedScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmountWastedScreen.swift; sourceTree = "<group>"; };
 		3BC8D63E292598FB00A55011 /* InventoryItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryItem.swift; sourceTree = "<group>"; };
 		3BD0CA1D29186EA700489700 /* FirstScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstScreen.swift; sourceTree = "<group>"; };
-		3BD0CA2129187CB300489700 /* RecipeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeView.swift; sourceTree = "<group>"; };
 		3BD0CA2329187CDD00489700 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		3BF33774292C422400AF0359 /* ItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemView.swift; sourceTree = "<group>"; };
 		3BF33776292C4EE500AF0359 /* InventoryItemListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InventoryItemListView.swift; sourceTree = "<group>"; };
-		3BF33778292C4FB200AF0359 /* GroceryItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroceryItem.swift; sourceTree = "<group>"; };
 		3BF3377A292C50A600AF0359 /* GroceryItemLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroceryItemLabel.swift; sourceTree = "<group>"; };
-		3BF3377C292C512F00AF0359 /* InventoryItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InventoryItemView.swift; sourceTree = "<group>"; };
 		3BF3377E292C514A00AF0359 /* NewInventoryItemForm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewInventoryItemForm.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -99,8 +97,8 @@
 		3B6F6E4B2900BF2000242495 /* FreshFridge */ = {
 			isa = PBXGroup;
 			children = (
+				3BAEA49529387576005510E1 /* ExpDateFunct.swift */,
 				3BF3377A292C50A600AF0359 /* GroceryItemLabel.swift */,
-				3BF33778292C4FB200AF0359 /* GroceryItem.swift */,
 				3BC8D63E292598FB00A55011 /* InventoryItem.swift */,
 				01E1197529074F7100EF825E /* ItemRepository.swift */,
 				3B6F6E4C2900BF2000242495 /* FreshFridgeApp.swift */,
@@ -125,13 +123,12 @@
 			isa = PBXGroup;
 			children = (
 				01850558292C642800601DC5 /* MainView.swift */,
+				3BAEA49929387D92005510E1 /* AmountWastedScreen.swift */,
 				3BF3377E292C514A00AF0359 /* NewInventoryItemForm.swift */,
-				3BF3377C292C512F00AF0359 /* InventoryItemView.swift */,
 				3BF33776292C4EE500AF0359 /* InventoryItemListView.swift */,
 				3BD0CA1D29186EA700489700 /* FirstScreen.swift */,
 				3B6F6E4E2900BF2000242495 /* ContentView.swift */,
 				3BF33774292C422400AF0359 /* ItemView.swift */,
-				3BD0CA2129187CB300489700 /* RecipeView.swift */,
 				3BD0CA2329187CDD00489700 /* ProfileView.swift */,
 			);
 			path = Views;
@@ -233,20 +230,19 @@
 			files = (
 				3BF3377F292C514A00AF0359 /* NewInventoryItemForm.swift in Sources */,
 				3B6F6E4F2900BF2000242495 /* ContentView.swift in Sources */,
-				3BF33779292C4FB200AF0359 /* GroceryItem.swift in Sources */,
-				3BD0CA2229187CB300489700 /* RecipeView.swift in Sources */,
 				3B1FEF40292305EE009873ED /* ItemViewModel.swift in Sources */,
 				3B6F6E4D2900BF2000242495 /* FreshFridgeApp.swift in Sources */,
 				3BF33775292C422400AF0359 /* ItemView.swift in Sources */,
-				3BF3377D292C512F00AF0359 /* InventoryItemView.swift in Sources */,
 				3BF33777292C4EE600AF0359 /* InventoryItemListView.swift in Sources */,
 				01850559292C642800601DC5 /* MainView.swift in Sources */,
 				3BD0CA1E29186EA700489700 /* FirstScreen.swift in Sources */,
 				3BC8D63F292598FB00A55011 /* InventoryItem.swift in Sources */,
 				01E1197A290752EC00EF825E /* ItemListViewModel.swift in Sources */,
 				3BF3377B292C50A600AF0359 /* GroceryItemLabel.swift in Sources */,
+				3BAEA49629387576005510E1 /* ExpDateFunct.swift in Sources */,
 				3BD0CA2429187CDD00489700 /* ProfileView.swift in Sources */,
 				01E1197629074F7100EF825E /* ItemRepository.swift in Sources */,
+				3BAEA49A29387D92005510E1 /* AmountWastedScreen.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -390,9 +386,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.LinaMei.FreshFridge;
 				PRODUCT_NAME = FridgeView;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -419,9 +418,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.LinaMei.FreshFridge;
 				PRODUCT_NAME = FridgeView;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

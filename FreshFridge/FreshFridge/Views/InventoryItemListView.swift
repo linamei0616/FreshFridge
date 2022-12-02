@@ -24,18 +24,19 @@ struct InventoryItemListView: View {
     let pastelBlue = Color(red: 0.77, green: 0.83, blue: 0.92)
     
     //MARK: - Firebase functs
-    func addInventoryItem() {
-        let item = InventoryItem(name: "apple", quantity: 5)
-        inventoryItemListViewModel.add(item)
-    }
+    // I commented this because I think the actual add function is in NewInventoryItemForm?
+//    func addInventoryItem() {
+//        let item = InventoryItem(name: "apple", quantity: 5)
+//        inventoryItemListViewModel.add(item)
+//    }
     
-    func deleteItems(offsets: IndexSet) {
-        withAnimation {
-        }
-    }
+//    func deleteItems() {
+//        let item = InventoryItem(name: "banana" , quantity: 5 )
+//        inventoryItemListViewModel.remove(item)
+//    }
     
-    func alertInformation(name: String, quantity: Int) -> String {
-        return "Quantity: " + quantity.codingKey.stringValue + "\n Expiration Date: "  + "\n" + "Tips: "
+    func alertInformation(name: String, quantity: Int, expirationDate: Int) -> String {
+        return "Quantity: " + quantity.codingKey.stringValue + "\n Days Remaining: "  + String(expirationDate) + "\n" + "Tips: "
         //+ ExpDates[name]?.codingKey.stringValue
     }
     
@@ -56,14 +57,14 @@ struct InventoryItemListView: View {
                                     .alert(isPresented: $showingAlert) {
                                         Alert(
                                             title: Text(result.item.name),
-                                            message: Text(alertInformation(name: result.item.name, quantity: result.item.quantity)),
+                                            message: Text(alertInformation(name: result.item.name, quantity: result.item.quantity, expirationDate: ExpDates[result.item.name] ?? 10)),
                                             primaryButton: .destructive(Text("Edit")) {
                                                 inventoryItemViewModel?.remove()
                                             },
                                             secondaryButton: .cancel())
                                     }
                             }
-//                            .onDelete(perform: delete)
+//                            .onDelete(perform: deleteItems())
 //                            .onMove(perform: move)
                             .searchable(text: $search, placement: .navigationBarDrawer(displayMode: .always))
                         }
@@ -79,6 +80,10 @@ struct InventoryItemListView: View {
                 Image(systemName: "plus")
                     .font(.title)
             })
+//            .navigationBarItems(trailing: Button(action: { showForm.toggle() }) {
+//                Image(systemName: "minus")
+//                    .font(.title)
+//            })
         }
         .navigationViewStyle(StackNavigationViewStyle())
         

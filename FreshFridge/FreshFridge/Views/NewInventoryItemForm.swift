@@ -54,4 +54,3 @@ struct NewInventoryItemForm_Previews: PreviewProvider {
     NewInventoryItemForm(inventoryItemListViewModel: ItemListViewModel())
   }
 }
-

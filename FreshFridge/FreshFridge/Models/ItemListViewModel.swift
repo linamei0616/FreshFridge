@@ -37,6 +37,6 @@ class ItemListViewModel: ObservableObject {
     func add(_ item: InventoryItem) {
         itemRepository.add(item)
     }
-
+    
 }
 

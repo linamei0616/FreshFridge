@@ -38,5 +38,9 @@ class ItemListViewModel: ObservableObject {
         itemRepository.add(item)
     }
     
+    func remove(_ item: InventoryItem){
+        itemRepository.remove(item)
+    }
+
 }
 

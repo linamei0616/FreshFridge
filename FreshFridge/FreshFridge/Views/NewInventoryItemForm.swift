@@ -49,8 +49,16 @@ struct NewInventoryItemForm: View {
   }
 }
 
+//Image(systemName: "x.cirlce.fill")
+
+    
+//        Button(action: <#T##() -> Void#>, label: x.circle.fill)
+
+
 struct NewInventoryItemForm_Previews: PreviewProvider {
   static var previews: some View {
     NewInventoryItemForm(inventoryItemListViewModel: ItemListViewModel())
   }
 }
+
+

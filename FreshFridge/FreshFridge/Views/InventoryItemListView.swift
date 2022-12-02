@@ -18,27 +18,18 @@ struct InventoryItemListView: View {
     @State var showForm = false
     @State private var showingAlert = false
     @State var search = "" // Search Bar
+    @State private var info: AlertInfo?
+
     
     //MARK: - Colors
     let lightGrey = Color(red: 0.45, green: 0.57, blue: 0.72)
     let pastelBlue = Color(red: 0.77, green: 0.83, blue: 0.92)
     
     //MARK: - Firebase functs
-    // I commented this because I think the actual add function is in NewInventoryItemForm?
-//    func addInventoryItem() {
-//        let item = InventoryItem(name: "apple", quantity: 5)
-//        inventoryItemListViewModel.add(item)
-//    }
-    
 //    func deleteItems() {
 //        let item = InventoryItem(name: "banana" , quantity: 5 )
 //        inventoryItemListViewModel.remove(item)
 //    }
-    
-    func alertInformation(name: String, quantity: Int, expirationDate: Int) -> String {
-        return "Quantity: " + quantity.codingKey.stringValue + "\n Days Remaining: "  + String(expirationDate) + "\n" + "Tips: "
-        //+ ExpDates[name]?.codingKey.stringValue
-    }
     
     //MARK: - Body
     var body: some View {
@@ -50,19 +41,14 @@ struct InventoryItemListView: View {
                         VStack(spacing: 10) {
                             ForEach(inventoryItemListViewModel.itemViewModels) {
                                 result in Button(action: {
-                                    showingAlert=true }) {
+                                    info=AlertInfo(item: result.item, id: .one, title: result.item.name, message: alertInformation(name: result.item.name, quantity: result.item.quantity, expirationDate: ExpDates[result.item.name] ?? 10))
+                                }) {
                                         GroceryItemLabel(name: result.item.name, image: "", expirationDate: ExpDates[result.item.name] ?? 10)
                                     }
                                     .foregroundColor(lightGrey)
-                                    .alert(isPresented: $showingAlert) {
-                                        Alert(
-                                            title: Text(result.item.name),
-                                            message: Text(alertInformation(name: result.item.name, quantity: result.item.quantity, expirationDate: ExpDates[result.item.name] ?? 10)),
-                                            primaryButton: .destructive(Text("Edit")) {
-                                                inventoryItemViewModel?.remove()
-                                            },
-                                            secondaryButton: .cancel())
-                                    }
+                                    .alert(item: $info, content: { info in
+                                        Alert(title: Text(info.title), message: Text(info.message), primaryButton: .destructive(Text("Edit")), secondaryButton: .cancel())
+                                    })
                             }
 //                            .onDelete(perform: deleteItems())
 //                            .onMove(perform: move)

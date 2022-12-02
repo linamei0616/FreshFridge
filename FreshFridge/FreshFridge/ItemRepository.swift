@@ -58,7 +58,7 @@ class ItemRepository: ObservableObject {
         content.subtitle = "this will expire in 5 days!"
         content.sound = UNNotificationSound.default
         
-        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: Double(ExpDates[item.name] ?? 10), repeats: false)
         
         let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
         UNUserNotificationCenter.current().add(request)

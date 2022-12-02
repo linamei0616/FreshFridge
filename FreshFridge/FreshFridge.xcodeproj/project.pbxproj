@@ -29,6 +29,7 @@
 		3BAEA49A29387D92005510E1 /* AmountWastedScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BAEA49929387D92005510E1 /* AmountWastedScreen.swift */; };
 		3BC8D63F292598FB00A55011 /* InventoryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC8D63E292598FB00A55011 /* InventoryItem.swift */; };
 		3BD0CA2429187CDD00489700 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BD0CA2329187CDD00489700 /* ProfileView.swift */; };
+		3BD9B7B92939D9BB00A076E2 /* AlertInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BD9B7B82939D9BB00A076E2 /* AlertInfo.swift */; };
 		3BF33775292C422400AF0359 /* ItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF33774292C422400AF0359 /* ItemView.swift */; };
 		3BF33777292C4EE600AF0359 /* InventoryItemListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF33776292C4EE500AF0359 /* InventoryItemListView.swift */; };
 		3BF3377B292C50A600AF0359 /* GroceryItemLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF3377A292C50A600AF0359 /* GroceryItemLabel.swift */; };
@@ -51,6 +52,7 @@
 		3BAEA49929387D92005510E1 /* AmountWastedScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmountWastedScreen.swift; sourceTree = "<group>"; };
 		3BC8D63E292598FB00A55011 /* InventoryItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryItem.swift; sourceTree = "<group>"; };
 		3BD0CA2329187CDD00489700 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		3BD9B7B82939D9BB00A076E2 /* AlertInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertInfo.swift; sourceTree = "<group>"; };
 		3BF33774292C422400AF0359 /* ItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemView.swift; sourceTree = "<group>"; };
 		3BF33776292C4EE500AF0359 /* InventoryItemListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InventoryItemListView.swift; sourceTree = "<group>"; };
 		3BF3377A292C50A600AF0359 /* GroceryItemLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroceryItemLabel.swift; sourceTree = "<group>"; };
@@ -97,11 +99,11 @@
 		3B6F6E4B2900BF2000242495 /* FreshFridge */ = {
 			isa = PBXGroup;
 			children = (
-				3BAEA49529387576005510E1 /* ExpDateFunct.swift */,
-				3BF3377A292C50A600AF0359 /* GroceryItemLabel.swift */,
 				3BC8D63E292598FB00A55011 /* InventoryItem.swift */,
 				01E1197529074F7100EF825E /* ItemRepository.swift */,
 				3B6F6E4C2900BF2000242495 /* FreshFridgeApp.swift */,
+				3BAEA49529387576005510E1 /* ExpDateFunct.swift */,
+				3BD9B7BA2939DFC200A076E2 /* Modifiers */,
 				3BC8D639292584ED00A55011 /* Models */,
 				3BC8D638292584C700A55011 /* Views */,
 				3B6F6E502900BF2100242495 /* Assets.xcassets */,
@@ -141,6 +143,15 @@
 				3B1FEF3F292305EE009873ED /* ItemViewModel.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		3BD9B7BA2939DFC200A076E2 /* Modifiers */ = {
+			isa = PBXGroup;
+			children = (
+				3BF3377A292C50A600AF0359 /* GroceryItemLabel.swift */,
+				3BD9B7B82939D9BB00A076E2 /* AlertInfo.swift */,
+			);
+			path = Modifiers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -240,6 +251,7 @@
 				01E1197A290752EC00EF825E /* ItemListViewModel.swift in Sources */,
 				3BF3377B292C50A600AF0359 /* GroceryItemLabel.swift in Sources */,
 				3BAEA49629387576005510E1 /* ExpDateFunct.swift in Sources */,
+				3BD9B7B92939D9BB00A076E2 /* AlertInfo.swift in Sources */,
 				3BD0CA2429187CDD00489700 /* ProfileView.swift in Sources */,
 				01E1197629074F7100EF825E /* ItemRepository.swift in Sources */,
 				3BAEA49A29387D92005510E1 /* AmountWastedScreen.swift in Sources */,

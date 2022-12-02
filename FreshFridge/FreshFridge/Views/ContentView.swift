@@ -11,33 +11,32 @@ struct ContentView: View {
     @EnvironmentObject var itemListViewModel : ItemListViewModel
 //    @Published var itemRepository = ItemRepository()
     var body: some View {
-//       NavigationView {
-//        Group {
-//            List {
-//                ForEach(itemListViewModel.itemViewModels) { item in
-//
-////                        NavigationLink {
-////                            Text("Item at")
-////                        } label: {
-////                            Text(item.name) // retrieved from the model
-////                        }
-//                    ItemView(itemViewModel: item)
-//                    }
-//                }
-//        }
-//        .toolbar {
-//            ToolbarItem(placement: .navigationBarTrailing) {
-//                EditButton()
-//            }
-//            ToolbarItem {
-//                Button(action: addInventoryItem) {
-//                    Label("Add Item", systemImage: "plus")
-//                }
-//            }
-//        }
-//    }
-       InventoryItemListView(showForm: false)
-        
+        //       NavigationView {
+        //        Group {
+        //            List {
+        //                ForEach(itemListViewModel.itemViewModels) { item in
+        //
+        ////                        NavigationLink {
+        ////                            Text("Item at")
+        ////                        } label: {
+        ////                            Text(item.name) // retrieved from the model
+        ////                        }
+        //                    ItemView(itemViewModel: item)
+        //                    }
+        //                }
+        //        }
+        //        .toolbar {
+        //            ToolbarItem(placement: .navigationBarTrailing) {
+        //                EditButton()
+        //            }
+        //            ToolbarItem {
+        //                Button(action: addInventoryItem) {
+        //                    Label("Add Item", systemImage: "plus")
+        //                }
+        //            }
+        //        }
+        //    }
+        InventoryItemListView(showForm: false)
             .onAppear{
                 UNUserNotificationCenter.current().requestAuthorization(options:[.alert, .badge, .sound]) { success, error in
                     if success {
@@ -49,16 +48,6 @@ struct ContentView: View {
                     }
                 }
             }
-}
-    
-    
-    private func addInventoryItem() {
-        /*
-         To-Do:
-         update this function to receive user inputs instead
-         */
-        let item = InventoryItem(id: "" , name: "banana", quantity: 2)
-        itemListViewModel.add(item)
     }
 
 }

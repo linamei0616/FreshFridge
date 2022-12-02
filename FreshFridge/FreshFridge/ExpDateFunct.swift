@@ -8,7 +8,7 @@
 import Foundation
 
 var ExpDates = ["Apple" : 28,
-                "Broccoli" : 10,
+                "Broccoli" : 6,
                 "Banana" : 7,
                 "Cabbage" : 28,
                 "Carrot" : 28,
@@ -17,7 +17,9 @@ var ExpDates = ["Apple" : 28,
                 "Corn" : 35,
                 "Cucumbers" : 7,
                 "Garlic" : 168,
+                "Guava" : 5,
                 "Lettuce" : 7,
+                "Milk" : 20,
                 "Onion" : 24,
                 "Pepper" : 14,
                 "Potato" : 84,

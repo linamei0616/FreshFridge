@@ -19,6 +19,7 @@ struct InventoryItemListView: View {
     @State private var showingAlert = false
     @State var search = "" // Search Bar
     @State private var info: AlertInfo?
+    @State private var quant: String = ""
 
     
     //MARK: - Colors
@@ -38,7 +39,7 @@ struct InventoryItemListView: View {
                 //MARK: - Firebase
                 GeometryReader { geometry in
                     ScrollView(.vertical) {
-                        VStack(spacing: 10) {
+                        VStack() {
                             ForEach(inventoryItemListViewModel.itemViewModels) {
                                 result in Button(action: {
                                     info=AlertInfo(item: result.item, id: .one, title: result.item.name, message: alertInformation(name: result.item.name, quantity: result.item.quantity, expirationDate: ExpDates[result.item.name] ?? 10))
@@ -49,6 +50,7 @@ struct InventoryItemListView: View {
                                     .alert(item: $info, content: { info in
                                         Alert(title: Text(info.title), message: Text(info.message), primaryButton: .destructive(Text("Edit")), secondaryButton: .cancel())
                                     })
+                                    
                             }
 //                            .onDelete(perform: deleteItems())
 //                            .onMove(perform: move)

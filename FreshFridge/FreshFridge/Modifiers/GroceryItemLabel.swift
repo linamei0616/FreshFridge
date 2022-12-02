@@ -24,8 +24,13 @@ struct GroceryItemLabel: View {
             .overlay(VStack{
                 Text(name)
                 HStack {
-                    Text(String(expirationDate))
-                        .foregroundColor(Color.red)
+                    if (expirationDate <= 7) {
+                        Text(String(expirationDate))
+                            .foregroundColor(Color.red)
+                    } else {
+                        Text(String(expirationDate))
+                            .foregroundColor(lightGrey)
+                    }
                     Text("days remaining")
                         .foregroundColor(lightGrey)
                 }

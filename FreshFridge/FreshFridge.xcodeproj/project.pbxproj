@@ -35,6 +35,8 @@
 		3BF3377B292C50A600AF0359 /* GroceryItemLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF3377A292C50A600AF0359 /* GroceryItemLabel.swift */; };
 		3BF3377F292C514A00AF0359 /* NewInventoryItemForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF3377E292C514A00AF0359 /* NewInventoryItemForm.swift */; };
 		844A98662939995400AFB50C /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 844A98652939995400AFB50C /* Launch Screen.storyboard */; };
+		849806D2293EA4FB003DEB37 /* Launch Screentwo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 849806D1293EA4FB003DEB37 /* Launch Screentwo.storyboard */; };
+		849806D4293EAA1F003DEB37 /* Launch Screenthree.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 849806D3293EAA1F003DEB37 /* Launch Screenthree.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +60,8 @@
 		3BF3377A292C50A600AF0359 /* GroceryItemLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroceryItemLabel.swift; sourceTree = "<group>"; };
 		3BF3377E292C514A00AF0359 /* NewInventoryItemForm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewInventoryItemForm.swift; sourceTree = "<group>"; };
 		844A98652939995400AFB50C /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		849806D1293EA4FB003DEB37 /* Launch Screentwo.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screentwo.storyboard"; sourceTree = "<group>"; };
+		849806D3293EAA1F003DEB37 /* Launch Screenthree.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screenthree.storyboard"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +130,8 @@
 			children = (
 				01850558292C642800601DC5 /* MainView.swift */,
 				844A98652939995400AFB50C /* Launch Screen.storyboard */,
+				849806D1293EA4FB003DEB37 /* Launch Screentwo.storyboard */,
+				849806D3293EAA1F003DEB37 /* Launch Screenthree.storyboard */,
 				3BAEA49929387D92005510E1 /* AmountWastedScreen.swift */,
 				3BF3377E292C514A00AF0359 /* NewInventoryItemForm.swift */,
 				3BF33776292C4EE500AF0359 /* InventoryItemListView.swift */,
@@ -229,6 +235,8 @@
 				3B6F6E542900BF2100242495 /* Preview Assets.xcassets in Resources */,
 				3B6F6E512900BF2100242495 /* Assets.xcassets in Resources */,
 				844A98662939995400AFB50C /* Launch Screen.storyboard in Resources */,
+				849806D4293EAA1F003DEB37 /* Launch Screenthree.storyboard in Resources */,
+				849806D2293EA4FB003DEB37 /* Launch Screentwo.storyboard in Resources */,
 				01E119612907494400EF825E /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

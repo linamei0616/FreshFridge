@@ -32,32 +32,30 @@ struct InventoryItemListView: View {
     var body: some View {
         NavigationView {
             VStack {
-//                GeometryReader { geometry in
-//                    ScrollView(.vertical) {
-                        List {
-                            ForEach(inventoryItemListViewModel.itemViewModels) {
-                                result in
-                                Text(result.item.name)
+                if #available(iOS 16.0, *) {
+                    List {
+                        ForEach(inventoryItemListViewModel.itemViewModels) {
+                            result in
+                            //                                Text(result.item.name)
+                            Button(action: {
+                                info=AlertInfo(item: result.item, id: .one, title: result.item.name, message: alertInformation(name: result.item.name, quantity: result.item.quantity, expirationDate: ExpDates[result.item.name] ?? 10))
+                            }) {
+                                GroceryItemLabel(name: result.item.name, image: "", expirationDate: ExpDates[result.item.name] ?? 10)
                             }
-//                            ForEach(inventoryItemListViewModel.itemViewModels) {
-//                                result in Button(action: {
-//                                    info=AlertInfo(item: result.item, id: .one, title: result.item.name, message: alertInformation(name: result.item.name, quantity: result.item.quantity, expirationDate: ExpDates[result.item.name] ?? 10))
-//                                }) {
-//                                        GroceryItemLabel(name: result.item.name, image: "", expirationDate: ExpDates[result.item.name] ?? 10)
-//                                    }
-//                                    .foregroundColor(lightGrey)
-//                                    .alert(item: $info, content: { info in
-//                                        Alert(title: Text(info.title), message: Text(info.message), primaryButton: .destructive(Text("Edit")), secondaryButton: .cancel())
-//
-////                                              primaryButton: .destructive(Text("Edit")), secondaryButton: .cancel())
-//                                    })
-//                            }
-                            .onDelete(perform: deleteItem)
-////                            .onMove(perform: move)
-//                            .searchable(text: $search, placement: .navigationBarDrawer(displayMode: .always))
+                            .foregroundColor(lightGrey)
+                            .alert(item: $info, content: {info in
+                                Alert(title: Text(info.title), message: Text(info.message), primaryButton: .destructive(Text("Edit")), secondaryButton: .cancel())
+                                
+                            })
                         }
-//                    }
-//                }
+                        .onDelete(perform: deleteItem)
+                        ////                            .onMove(perform: move)
+                        //                            .searchable(text: $search, placement: .navigationBarDrawer(displayMode: .always))
+                    }
+                    .scrollContentBackground(.hidden)
+                } else {
+                    // Fallback on earlier versions
+                }
             }
             // when button is pressed
             .sheet(isPresented: $showForm) {
@@ -71,24 +69,14 @@ struct InventoryItemListView: View {
             .toolbar{
                 EditButton()
             }
-//            .navigationBarItems(trailing: Button(action: { showForm.toggle() }) {
-//                Image(systemName: "minus")
-//                    .font(.title)
-//            })
         }
         .navigationViewStyle(StackNavigationViewStyle())
         
     }
     
     //MARK: - Firebase functs
-//    func deleteItems() {
-//        let item = InventoryItem(name: "banana" , quantity: 5 )
-//        inventoryItemListViewModel.remove(item)
-//    }
     func deleteItem(at indexes:IndexSet) {
-//            if let first = indexes.first{
                 inventoryItemListViewModel.remove(at: indexes)
-//            }
         }
 }
 

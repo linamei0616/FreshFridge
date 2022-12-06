@@ -28,7 +28,8 @@ class ItemViewModel: ObservableObject, Identifiable {
         .store(in: &cancellables)
     }
     func remove() {
-        itemRepository.remove(item)
+//        itemRepository.remove(item)
+//        itemRepository.delete(at: )
     }
     func update() {
         itemRepository.update(item)

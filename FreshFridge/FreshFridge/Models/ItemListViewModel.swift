@@ -41,9 +41,12 @@ class ItemListViewModel: ObservableObject {
         itemRepository.makenotification(item)
     }
     
-    func remove(_ item: InventoryItem){
-        itemRepository.remove(item)
+    func remove(at offsets: IndexSet){
+        itemRepository.delete(at: offsets)
     }
-
+    
+    func update(_ item: InventoryItem) {
+        itemRepository.update(item)
+    }
 }
 

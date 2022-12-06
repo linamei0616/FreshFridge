@@ -64,17 +64,30 @@ class ItemRepository: ObservableObject {
         UNUserNotificationCenter.current().add(request)
     }
     
-    func remove(_ item: InventoryItem) {
-      // 1
-      guard let itemId = item.id else { return }
-
-      // 2
-      store.collection(path).document(itemId).delete { error in
-        if let error = error {
-          print("Unable to remove inventoryItem: \(error.localizedDescription)")
+//    func remove(_ item: InventoryItem) {
+//      // 1
+//      guard let itemId = item.id else { return }
+//
+//      // 2
+//      store.collection(path).document(itemId).delete { error in
+//        if let error = error {
+//          print("Unable to remove inventoryItem: \(error.localizedDescription)")
+//        }
+//      }
+//    }
+    func delete(at offsets: IndexSet) {
+      offsets.map { items[$0] }.forEach { item in
+        guard let itemID = item.id else { return }
+        store.collection("item").document(itemID).delete() { err in
+          if let err = err {
+            print("Error removing document: \(err)")
+          } else {
+            print("Document successfully removed!")
+          }
         }
       }
     }
+    
     func update(_ item: InventoryItem) {
         guard let id = item.id else { return }
         do {

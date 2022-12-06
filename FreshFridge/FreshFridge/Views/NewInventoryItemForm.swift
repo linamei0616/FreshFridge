@@ -34,6 +34,10 @@ struct NewInventoryItemForm: View {
         Text("Add New Item")
           .foregroundColor(.blue)
       }
+        Button("Cancel", role: nil) {
+//            Text("Cancel")
+//            .foregroundColor(.red)
+        }
       Spacer()
     }
     .padding(EdgeInsets(top: 80, leading: 40, bottom: 0, trailing: 40))

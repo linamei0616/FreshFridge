@@ -20,7 +20,7 @@ struct InventoryItemListView: View {
     @State private var showingAlert = false
     @State private var info: AlertInfo?
 
-    @State var search = "" // Search Bar
+    @State var query = "" // Search Bar
     @State private var quant: String = ""
 
     
@@ -36,7 +36,6 @@ struct InventoryItemListView: View {
                     List {
                         ForEach(inventoryItemListViewModel.itemViewModels) {
                             result in
-                            //                                Text(result.item.name)
                             Button(action: {
                                 info=AlertInfo(item: result.item, id: .one, title: result.item.name, message: alertInformation(name: result.item.name, quantity: result.item.quantity, expirationDate: ExpDates[result.item.name] ?? 10))
                             }) {
@@ -50,13 +49,23 @@ struct InventoryItemListView: View {
                         }
                         .onDelete(perform: deleteItem)
                         ////                            .onMove(perform: move)
-                        //                            .searchable(text: $search, placement: .navigationBarDrawer(displayMode: .always))
+//                        .searchable(text: $query) {
+//                            ForEach(inventoryItemListViewModel.itemViewModels., id: \.self) { suggestion in
+//                                Text(suggestion)
+//                                    .searchCompletion(suggestion)
+//                            }
+//                        }
+//                        .onChange(of: query) { newQuery in
+//                            async { await inventoryItemListViewModel.search(matching: query)}
+//                        }
+                        
                     }
                     .scrollContentBackground(.hidden)
                 } else {
                     // Fallback on earlier versions
                 }
             }
+            
             // when button is pressed
             .sheet(isPresented: $showForm) {
                 NewInventoryItemForm(inventoryItemListViewModel: ItemListViewModel())

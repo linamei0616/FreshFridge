@@ -23,11 +23,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="ic_launcher_foreground" translatesAutoresizingMaskIntoConstraints="NO" id="42M-dP-FG6">
-                                <rect key="frame" x="-271" y="-670" width="954" height="2289"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="fridgeview-transparent white" translatesAutoresizingMaskIntoConstraints="NO" id="GuB-Nb-52T">
-                                <rect key="frame" x="105" y="33" width="288" height="424"/>
+                                <rect key="frame" x="81" y="277" width="231" height="270"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
@@ -46,7 +42,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="fridgeview-transparent white" width="1501" height="1501"/>
         <image name="ic_launcher_foreground" width="432" height="432"/>
     </resources>
 </document>

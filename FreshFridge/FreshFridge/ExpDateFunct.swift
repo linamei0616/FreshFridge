@@ -87,5 +87,5 @@ var ExpDates = ["Apple" : 28,
                 "Turnips" : 10,
                 "Watermelons" : 8,
                 "Yams" : 88,
-                "Zucchini" : 6 ]
+                "Zucchini" : 6, ]
 

@@ -13,8 +13,8 @@ import UserNotifications
 // 2
 class ItemRepository: ObservableObject {
   // 3
-  private let path: String = "item" // path: diff users
-  // 4
+  private let path: String = "item"
+    // 4
   private let store = Firestore.firestore()
     
     // 1

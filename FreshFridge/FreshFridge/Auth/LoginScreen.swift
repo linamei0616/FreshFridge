@@ -35,7 +35,7 @@ struct LoginScreen: View {
             if error != nil {
                 print(error?.localizedDescription ?? "")
             } else {
-                let itemListViewModel = ItemListViewModel()
+//                let itemListViewModel = ItemListViewModel()
             }
         }
     }

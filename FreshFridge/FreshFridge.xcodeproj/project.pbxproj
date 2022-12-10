@@ -11,17 +11,15 @@
 		01E119612907494400EF825E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 01E119602907494300EF825E /* GoogleService-Info.plist */; };
 		01E1197629074F7100EF825E /* ItemRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E1197529074F7100EF825E /* ItemRepository.swift */; };
 		01E1197A290752EC00EF825E /* ItemListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E11979290752EC00EF825E /* ItemListViewModel.swift */; };
-		3B16AC7F2943AB04008CE17E /* LoginScreen2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B16AC7E2943AB04008CE17E /* LoginScreen2.swift */; };
 		3B16AC832943AD4C008CE17E /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 3B16AC822943AD4C008CE17E /* GoogleSignIn */; };
 		3B16AC852943AD4C008CE17E /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 3B16AC842943AD4C008CE17E /* GoogleSignInSwift */; };
-		3B16AC872943B0E8008CE17E /* GoogleSignInApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B16AC862943B0E8008CE17E /* GoogleSignInApp.swift */; };
-		3B16AC892943B118008CE17E /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B16AC882943B118008CE17E /* LoginViewModel.swift */; };
 		3B16AC8B2943B33F008CE17E /* Application.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B16AC8A2943B33F008CE17E /* Application.swift */; };
 		3B1FEF40292305EE009873ED /* ItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1FEF3F292305EE009873ED /* ItemViewModel.swift */; };
 		3B6F6E4D2900BF2000242495 /* FreshFridgeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6F6E4C2900BF2000242495 /* FreshFridgeApp.swift */; };
 		3B6F6E4F2900BF2000242495 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6F6E4E2900BF2000242495 /* ContentView.swift */; };
 		3B6F6E512900BF2100242495 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B6F6E502900BF2100242495 /* Assets.xcassets */; };
 		3B6F6E542900BF2100242495 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B6F6E532900BF2100242495 /* Preview Assets.xcassets */; };
+		3B82EAF32943CDBC00DB0F59 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B82EAF22943CDBC00DB0F59 /* SignUpViewModel.swift */; };
 		3B8BF42029415F5200FAE85B /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 3B8BF41F29415F5200FAE85B /* FirebaseAuth */; };
 		3B8BF42229415F5200FAE85B /* FirebaseAuthCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 3B8BF42129415F5200FAE85B /* FirebaseAuthCombine-Community */; };
 		3B8BF42429415F5200FAE85B /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 3B8BF42329415F5200FAE85B /* FirebaseDatabase */; };
@@ -51,10 +49,7 @@
 		01E119602907494300EF825E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		01E1197529074F7100EF825E /* ItemRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemRepository.swift; sourceTree = "<group>"; };
 		01E11979290752EC00EF825E /* ItemListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemListViewModel.swift; sourceTree = "<group>"; };
-		3B16AC7E2943AB04008CE17E /* LoginScreen2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreen2.swift; sourceTree = "<group>"; };
 		3B16AC802943AB2D008CE17E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		3B16AC862943B0E8008CE17E /* GoogleSignInApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleSignInApp.swift; sourceTree = "<group>"; };
-		3B16AC882943B118008CE17E /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		3B16AC8A2943B33F008CE17E /* Application.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Application.swift; sourceTree = "<group>"; };
 		3B1FEF3F292305EE009873ED /* ItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemViewModel.swift; sourceTree = "<group>"; };
 		3B6F6E492900BF2000242495 /* FridgeView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FridgeView.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -62,6 +57,7 @@
 		3B6F6E4E2900BF2000242495 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		3B6F6E502900BF2100242495 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3B6F6E532900BF2100242495 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		3B82EAF22943CDBC00DB0F59 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
 		3B93C00F2943A345009EC772 /* LoginScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreen.swift; sourceTree = "<group>"; };
 		3BAEA49529387576005510E1 /* ExpDateFunct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpDateFunct.swift; sourceTree = "<group>"; };
 		3BAEA49929387D92005510E1 /* AmountWastedScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmountWastedScreen.swift; sourceTree = "<group>"; };
@@ -113,9 +109,7 @@
 			isa = PBXGroup;
 			children = (
 				3B93C00F2943A345009EC772 /* LoginScreen.swift */,
-				3B16AC7E2943AB04008CE17E /* LoginScreen2.swift */,
-				3B16AC862943B0E8008CE17E /* GoogleSignInApp.swift */,
-				3B16AC882943B118008CE17E /* LoginViewModel.swift */,
+				3B82EAF22943CDBC00DB0F59 /* SignUpViewModel.swift */,
 				3B16AC8A2943B33F008CE17E /* Application.swift */,
 			);
 			path = Auth;
@@ -146,10 +140,10 @@
 				3B6F6E4C2900BF2000242495 /* FreshFridgeApp.swift */,
 				3BAEA49529387576005510E1 /* ExpDateFunct.swift */,
 				3B16AC8C2943B4DB008CE17E /* Auth */,
-				3B16AC7D2943A8C6008CE17E /* Launch Screens */,
 				3BD9B7BA2939DFC200A076E2 /* Modifiers */,
 				3BC8D639292584ED00A55011 /* Models */,
 				3BC8D638292584C700A55011 /* Views */,
+				3B16AC7D2943A8C6008CE17E /* Launch Screens */,
 				3B6F6E502900BF2100242495 /* Assets.xcassets */,
 				01E119602907494300EF825E /* GoogleService-Info.plist */,
 				3B6F6E522900BF2100242495 /* Preview Content */,
@@ -290,23 +284,21 @@
 			files = (
 				3B16AC8B2943B33F008CE17E /* Application.swift in Sources */,
 				3BF3377F292C514A00AF0359 /* NewInventoryItemForm.swift in Sources */,
+				3B82EAF32943CDBC00DB0F59 /* SignUpViewModel.swift in Sources */,
 				3B6F6E4F2900BF2000242495 /* ContentView.swift in Sources */,
 				3B1FEF40292305EE009873ED /* ItemViewModel.swift in Sources */,
 				3B6F6E4D2900BF2000242495 /* FreshFridgeApp.swift in Sources */,
-				3B16AC7F2943AB04008CE17E /* LoginScreen2.swift in Sources */,
 				3BF33775292C422400AF0359 /* ItemView.swift in Sources */,
 				3B93C0102943A345009EC772 /* LoginScreen.swift in Sources */,
 				3BF33777292C4EE600AF0359 /* InventoryItemListView.swift in Sources */,
 				01850559292C642800601DC5 /* MainView.swift in Sources */,
 				3BC8D63F292598FB00A55011 /* InventoryItem.swift in Sources */,
-				3B16AC872943B0E8008CE17E /* GoogleSignInApp.swift in Sources */,
 				01E1197A290752EC00EF825E /* ItemListViewModel.swift in Sources */,
 				3BF3377B292C50A600AF0359 /* GroceryItemLabel.swift in Sources */,
 				3BAEA49629387576005510E1 /* ExpDateFunct.swift in Sources */,
 				3BD9B7B92939D9BB00A076E2 /* AlertInfo.swift in Sources */,
 				3BD0CA2429187CDD00489700 /* ProfileView.swift in Sources */,
 				01E1197629074F7100EF825E /* ItemRepository.swift in Sources */,
-				3B16AC892943B118008CE17E /* LoginViewModel.swift in Sources */,
 				3BAEA49A29387D92005510E1 /* AmountWastedScreen.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -9,20 +9,25 @@ import SwiftUI
 
 struct ContentView: View {
     @EnvironmentObject var itemListViewModel : ItemListViewModel
+    @EnvironmentObject var signupVM : SignUpViewModel // google SignUp
 //    @Published var itemRepository = ItemRepository()
     var body: some View {
-        InventoryItemListView(showForm: false)
-            .onAppear{
-                UNUserNotificationCenter.current().requestAuthorization(options:[.alert, .badge, .sound]) { success, error in
-                    if success {
-                        print(success)
-
-                    }
-                    else if let error = error{
-                        print(error.localizedDescription)
+        if (signupVM.isLogin == false) {
+            LoginScreen()
+        } else {
+            InventoryItemListView(showForm: false)
+                .onAppear{
+                    UNUserNotificationCenter.current().requestAuthorization(options:[.alert, .badge, .sound]) { success, error in
+                        if success {
+                            print(success)
+                            
+                        }
+                        else if let error = error{
+                            print(error.localizedDescription)
+                        }
                     }
                 }
-            }
+        }
     }
 
 }

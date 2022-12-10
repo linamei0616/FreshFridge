@@ -13,7 +13,6 @@ struct InventoryItemListView: View {
     
     //MARK: - Variables - Firebase data
     @EnvironmentObject var inventoryItemListViewModel : ItemListViewModel // firebase model
-    @EnvironmentObject var signupVM: SignUpViewModel // google SignUp
     var inventoryItemViewModel: ItemViewModel? = nil
 
     //MARK: - Variables - Alerts

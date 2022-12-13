@@ -14,10 +14,16 @@ import FirebaseAuth
 // 2
 class ItemRepository: ObservableObject {
   // 3
-    private var path: String = Auth.auth().currentUser?.uid ?? "item" // instead of item, it should be userID
-    // 4
-  private let store = Firestore.firestore()
+
+    private var handle = Auth.auth().addStateDidChangeListener { auth, user in
+      // ...
+    }
+    private let userID = Auth.auth().currentUser?.uid
     
+    private var path: String = Auth.auth().currentUser?.uid ?? "Unknown User"
+    // 4
+    private let store = Firestore.firestore()
+
     // 1
     @Published var items: [InventoryItem] = []
 
@@ -25,6 +31,7 @@ class ItemRepository: ObservableObject {
     init() {
       get()
     }
+    
     
     func get() {
       // 3

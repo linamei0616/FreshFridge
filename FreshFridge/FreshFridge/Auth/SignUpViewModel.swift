@@ -11,7 +11,21 @@ import Firebase
 import GoogleSignIn
 
 class SignUpViewModel: ObservableObject {
+    
     @Published var isLogin: Bool = false
+    // user id : user.uid
+    @Published var userID: String = ""
+    @Published var itemRepository = ItemRepository()
+
+    
+    enum SignInState {
+      case signedIn
+      case signedOut
+    }
+    
+    @Published var state: SignInState = .signedOut
+
+    
     func signUpWithGoogle() {
         // get app client id
         guard let clientId = FirebaseApp.app()?.options.clientID else { return }
@@ -46,7 +60,9 @@ class SignUpViewModel: ObservableObject {
                 }
                 guard let user = authResult?.user else { return }
                 print(user.displayName as Any)
+                self.userID = user.uid
                 self.isLogin.toggle()
+                //                self.itemRepository.auth(id: user.uid)
             }
         }
     }

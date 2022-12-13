@@ -10,10 +10,11 @@ import FirebaseFirestore
 import FirebaseFirestoreSwift
 import Combine
 import UserNotifications
+import FirebaseAuth
 // 2
 class ItemRepository: ObservableObject {
   // 3
-  private let path: String = "item"
+    private var path: String = Auth.auth().currentUser?.uid ?? "item" // instead of item, it should be userID
     // 4
   private let store = Firestore.firestore()
     
@@ -24,7 +25,7 @@ class ItemRepository: ObservableObject {
     init() {
       get()
     }
-
+    
     func get() {
       // 3
       store.collection(path)
@@ -78,7 +79,7 @@ class ItemRepository: ObservableObject {
     func delete(at offsets: IndexSet) {
       offsets.map { items[$0] }.forEach { item in
         guard let itemID = item.id else { return }
-        store.collection("item").document(itemID).delete() { err in
+        store.collection(path).document(itemID).delete() { err in
           if let err = err {
             print("Error removing document: \(err)")
           } else {

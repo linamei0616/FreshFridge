@@ -10,6 +10,15 @@ import SwiftUI
 struct ProfileView: View {
     var body: some View {
         Text("This is Profile Screen")
+        /* for signing out
+         let firebaseAuth = Auth.auth()
+     do {
+       try firebaseAuth.signOut()
+     } catch let signOutError as NSError {
+       print("Error signing out: %@", signOutError)
+     }
+       
+         */
     }
 }
 

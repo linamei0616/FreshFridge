@@ -6,15 +6,13 @@
 //
 
 import SwiftUI
+import Firebase
 
 struct ContentView: View {
     @EnvironmentObject var itemListViewModel : ItemListViewModel
     @EnvironmentObject var signupVM : SignUpViewModel // google SignUp
-//    @Published var itemRepository = ItemRepository()
+    @State private var auth = Firebase.Auth.auth()
     var body: some View {
-        if (signupVM.isLogin == false) {
-            LoginScreen()
-        } else {
             InventoryItemListView(showForm: false)
                 .onAppear{
                     UNUserNotificationCenter.current().requestAuthorization(options:[.alert, .badge, .sound]) { success, error in
@@ -24,7 +22,6 @@ struct ContentView: View {
                         }
                         else if let error = error{
                             print(error.localizedDescription)
-                        }
                     }
                 }
         }

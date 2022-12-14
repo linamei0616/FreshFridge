@@ -45,7 +45,7 @@ struct NewInventoryItemForm: View {
 
   private func addInventoryItem() {
     // 1
-      let inventoryItem = InventoryItem(name: question, quantity: Int(answer) ?? 0)
+      let inventoryItem = InventoryItem(name: question, quantity: Int(answer) ?? 0, exp: ExpDates[question] ?? 10)
     // 2
     inventoryItemListViewModel.add(inventoryItem)
       inventoryItemListViewModel.makenotification(inventoryItem)

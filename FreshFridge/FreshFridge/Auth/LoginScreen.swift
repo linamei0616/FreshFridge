@@ -8,6 +8,8 @@
 import SwiftUI
 import Firebase
 
+
+// currently not using this file
 struct LoginScreen: View {
     @EnvironmentObject var signupVM: SignUpViewModel
     @State var email = ""

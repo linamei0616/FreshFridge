@@ -6,19 +6,14 @@
 //
 
 import SwiftUI
+import Firebase
+import GoogleSignIn
 
 struct ProfileView: View {
     var body: some View {
         Text("This is Profile Screen")
-        /* for signing out
-         let firebaseAuth = Auth.auth()
-     do {
-       try firebaseAuth.signOut()
-     } catch let signOutError as NSError {
-       print("Error signing out: %@", signOutError)
-     }
-       
-         */
+//         let firebaseAuth = Auth.auth()
+
     }
 }
 

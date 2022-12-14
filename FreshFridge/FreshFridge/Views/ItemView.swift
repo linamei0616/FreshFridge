@@ -12,14 +12,13 @@ struct ItemView: View {
     var body: some View {
         HStack {
             Text(itemViewModel.item.name)
-              //  .foregroundColor(Color.black)
         }
     }
 }
 
 struct ItemView_Previews: PreviewProvider {
     static var previews: some View {
-        ItemView(itemViewModel: ItemViewModel(item: InventoryItem(name: "banana", quantity: 2)))
+        ItemView(itemViewModel: ItemViewModel(item: InventoryItem(name: "banana", quantity: 2, exp: 10)))
 
 
     }

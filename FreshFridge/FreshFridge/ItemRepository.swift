@@ -11,15 +11,13 @@ import FirebaseFirestoreSwift
 import Combine
 import UserNotifications
 import FirebaseAuth
+import Firebase
 // 2
 class ItemRepository: ObservableObject {
   // 3
-
-    private var handle = Auth.auth().addStateDidChangeListener { auth, user in
-      // ...
-    }
-    private let userID = Auth.auth().currentUser?.uid
     
+//    private let userID = Auth.auth().currentUser?.uid
+//    @State private var auth = Firebase.Auth.auth()
     private var path: String = Auth.auth().currentUser?.uid ?? "Unknown User"
     // 4
     private let store = Firestore.firestore()
@@ -29,9 +27,9 @@ class ItemRepository: ObservableObject {
 
     // 2
     init() {
-      get()
+        get()
+        items = items.sorted(by: {$0.exp < $1.exp})
     }
-    
     
     func get() {
       // 3
@@ -43,11 +41,12 @@ class ItemRepository: ObservableObject {
             return
           }
           // 5
-          self.items = querySnapshot?.documents.compactMap { document in
+            self.items = querySnapshot?.documents.compactMap { document in
             // 6
               try? document.data(as: InventoryItem.self)
-          } ?? []
+            } ?? []
         }
+
     }
 
   // 5
@@ -72,17 +71,6 @@ class ItemRepository: ObservableObject {
         UNUserNotificationCenter.current().add(request)
     }
     
-//    func remove(_ item: InventoryItem) {
-//      // 1
-//      guard let itemId = item.id else { return }
-//
-//      // 2
-//      store.collection(path).document(itemId).delete { error in
-//        if let error = error {
-//          print("Unable to remove inventoryItem: \(error.localizedDescription)")
-//        }
-//      }
-//    }
     func delete(at offsets: IndexSet) {
       offsets.map { items[$0] }.forEach { item in
         guard let itemID = item.id else { return }

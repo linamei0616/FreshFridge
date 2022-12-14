@@ -12,4 +12,5 @@ struct InventoryItem : Identifiable, Codable {
    @DocumentID var id: String?
     var name : String
     var quantity : Int
+    var exp: Int
 }

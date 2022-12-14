@@ -24,8 +24,7 @@ struct InventoryItemListView: View {
 
     //MARK: - Variables - Search Bar
 
-    @State var query = "" // Search Bar
-    @State private var quant: String = ""
+    @State var searchQuery = "" // Search Bar
     
     //MARK: - Colors
     let lightGrey = Color(red: 0.45, green: 0.57, blue: 0.72)
@@ -34,6 +33,8 @@ struct InventoryItemListView: View {
     //MARK: - Body
     var body: some View {
         // did not recognize a user, users will need to sign in
+        var display = inventoryItemListViewModel.itemViewModels
+        var updatedDisplay = inventoryItemListViewModel.itemViewModels
         if (Auth.auth().currentUser == nil) {
             Button {
                 signupVM.signUpWithGoogle()
@@ -46,33 +47,42 @@ struct InventoryItemListView: View {
                     VStack {
                         if #available(iOS 16.0, *) {
                             List {
-                                ForEach(inventoryItemListViewModel.itemViewModels) {
+                                ForEach(display) {
                                     result in
                                     Button(action: {
                                         info=AlertInfo(item: result.item, id: .one, title: result.item.name, message: alertInformation(name: result.item.name, quantity: result.item.quantity, expirationDate: ExpDates[result.item.name] ?? 10))
                                     }) {
-                                        GroceryItemLabel(name: result.item.name, image: "", expirationDate: ExpDates[result.item.name] ?? 10)
+                                        GroceryItemLabel(name: result.item.name, image: "", expirationDate: result.exp )
                                     }
                                     .foregroundColor(lightGrey)
                                     .alert(item: $info, content: { info in
                                         Alert(title: Text(info.title), message: Text(info.message), primaryButton: .destructive(Text("Edit")), secondaryButton: .cancel())
                                         
                                     })
-                                        
                                 }
                                 .onDelete(perform: deleteItem)
-                                ////                            .onMove(perform: move)
-                                //                        .searchable(text: $query) {
-                                //                            ForEach(inventoryItemListViewModel.itemViewModels., id: \.self) { suggestion in
-                                //                                Text(suggestion)
-                                //                                    .searchCompletion(suggestion)
-                                //                            }
-                                //                        }
-                                //                        .onChange(of: query) { newQuery in
-                                //                            async { await inventoryItemListViewModel.search(matching: query)}
-                                //                        }
-                                
+                                .listRowSeparator(.hidden)
+                                }
+                            .searchable(text: $searchQuery)
+                            .onSubmit(of: .search) {
+                                if searchQuery.isEmpty {
+                                } else {
+                                    display = display.filter {
+                                    $0.name
+                                      .localizedCaseInsensitiveContains(searchQuery)
+                                  }
+                                }
                             }
+                            .onChange(of: searchQuery) { _ in
+                                if searchQuery.isEmpty {
+                                } else {
+                                    display = display.filter {
+                                    $0.name
+                                      .localizedCaseInsensitiveContains(searchQuery)
+                                  }
+                                }
+                            }
+                            .listStyle(.plain)
                             .scrollContentBackground(.hidden)
                         } else {
                             // Fallback on earlier versions
@@ -101,6 +111,7 @@ struct InventoryItemListView: View {
     func deleteItem(at indexes:IndexSet) {
                 inventoryItemListViewModel.remove(at: indexes)
         }
+
 }
 
 struct InventoryItemListView_Previews: PreviewProvider {

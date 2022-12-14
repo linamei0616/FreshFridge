@@ -28,7 +28,7 @@ class ItemRepository: ObservableObject {
     // 2
     init() {
         get()
-        items = items.sorted(by: {$0.exp < $1.exp})
+        items = items.sorted(by: {$0.quantity < $1.quantity})
     }
     
     func get() {

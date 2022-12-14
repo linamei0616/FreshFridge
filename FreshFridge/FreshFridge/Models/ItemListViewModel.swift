@@ -21,7 +21,6 @@ class ItemListViewModel: ObservableObject {
     init() {
       // 1
       itemRepository.$items.map { items in
-//        items.map(ItemViewModel.init)
           items.map{ item in
               ItemViewModel(item: item)
 //              var x = print(item.name)

@@ -19,7 +19,5 @@ struct ItemView: View {
 struct ItemView_Previews: PreviewProvider {
     static var previews: some View {
         ItemView(itemViewModel: ItemViewModel(item: InventoryItem(name: "banana", quantity: 2, exp: 10)))
-
-
     }
 }

@@ -49,16 +49,16 @@ struct InventoryItemListView: View {
                                 ForEach(inventoryItemListViewModel.itemViewModels) {
                                     result in
                                     Button(action: {
-                                        print("traversing list")
                                         info=AlertInfo(item: result.item, id: .one, title: result.item.name, message: alertInformation(name: result.item.name, quantity: result.item.quantity, expirationDate: ExpDates[result.item.name] ?? 10))
                                     }) {
                                         GroceryItemLabel(name: result.item.name, image: "", expirationDate: ExpDates[result.item.name] ?? 10)
                                     }
                                     .foregroundColor(lightGrey)
-                                    .alert(item: $info, content: {info in
+                                    .alert(item: $info, content: { info in
                                         Alert(title: Text(info.title), message: Text(info.message), primaryButton: .destructive(Text("Edit")), secondaryButton: .cancel())
                                         
                                     })
+                                        
                                 }
                                 .onDelete(perform: deleteItem)
                                 ////                            .onMove(perform: move)

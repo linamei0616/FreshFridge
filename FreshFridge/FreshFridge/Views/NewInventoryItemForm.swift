@@ -34,15 +34,20 @@ struct NewInventoryItemForm: View {
         Text("Add New Item")
           .foregroundColor(.blue)
       }
-        Button("Cancel", role: nil) {
-//            Text("Cancel")
-//            .foregroundColor(.red)
+        
+        Button {
+            presentationMode.wrappedValue.dismiss()
+        } label: {
+            Text("Cancel")
         }
       Spacer()
     }
     .padding(EdgeInsets(top: 80, leading: 40, bottom: 0, trailing: 40))
   }
-
+    func dismiss() {
+        presentationMode.wrappedValue.dismiss()
+    }
+    
   private func addInventoryItem() {
     // 1
       let inventoryItem = InventoryItem(name: question, quantity: Int(answer) ?? 0, exp: ExpDates[question] ?? 10)

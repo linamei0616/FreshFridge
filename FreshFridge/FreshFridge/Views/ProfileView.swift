@@ -12,8 +12,6 @@ import GoogleSignIn
 struct ProfileView: View {
     var body: some View {
         Text("This is Profile Screen")
-//         let firebaseAuth = Auth.auth()
-
     }
 }
 

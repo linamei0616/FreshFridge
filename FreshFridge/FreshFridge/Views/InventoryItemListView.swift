@@ -34,7 +34,6 @@ struct InventoryItemListView: View {
     var body: some View {
         // did not recognize a user, users will need to sign in
         var display = inventoryItemListViewModel.itemViewModels
-        var updatedDisplay = inventoryItemListViewModel.itemViewModels
         if (Auth.auth().currentUser == nil) {
             Button {
                 signupVM.signUpWithGoogle()
@@ -88,7 +87,6 @@ struct InventoryItemListView: View {
                             // Fallback on earlier versions
                         }
                     }
-                    
                     // when button is pressed
                     .sheet(isPresented: $showForm) {
                         NewInventoryItemForm(inventoryItemListViewModel: ItemListViewModel())

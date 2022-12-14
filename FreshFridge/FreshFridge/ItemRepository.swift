@@ -12,53 +12,45 @@ import Combine
 import UserNotifications
 import FirebaseAuth
 import Firebase
-// 2
+
 class ItemRepository: ObservableObject {
-  // 3
-    
-//    private let userID = Auth.auth().currentUser?.uid
-//    @State private var auth = Firebase.Auth.auth()
+
     private var path: String = Auth.auth().currentUser?.uid ?? "Unknown User"
-    // 4
     private let store = Firestore.firestore()
 
-    // 1
     @Published var items: [InventoryItem] = []
 
-    // 2
+
     init() {
         get()
         items = items.sorted(by: {$0.quantity < $1.quantity})
     }
     
+//MARK: Retrieving from firebase
     func get() {
-      // 3
       store.collection(path)
         .addSnapshotListener { querySnapshot, error in
-          // 4
           if let error = error {
             print("Error getting items: \(error.localizedDescription)")
             return
           }
-          // 5
             self.items = querySnapshot?.documents.compactMap { document in
-            // 6
               try? document.data(as: InventoryItem.self)
             } ?? []
         }
 
     }
-
-  // 5
+    
+//MARK: Adding to firebase
   func add(_ item: InventoryItem) {
     do {
-      // 6
       _ = try store.collection(path).addDocument(from: item)
     } catch {
       fatalError("Unable to add item: \(error.localizedDescription).")
     }
   }
     
+//MARK: Notification for items
     func makenotification(_ item: InventoryItem){
         let content = UNMutableNotificationContent()
         content.title = " \(item.name) About to Expire"
@@ -71,6 +63,7 @@ class ItemRepository: ObservableObject {
         UNUserNotificationCenter.current().add(request)
     }
     
+//MARK: Deleting from firebase
     func delete(at offsets: IndexSet) {
       offsets.map { items[$0] }.forEach { item in
         guard let itemID = item.id else { return }
@@ -84,6 +77,7 @@ class ItemRepository: ObservableObject {
       }
     }
     
+//MARK: Updating firebase
     func update(_ item: InventoryItem) {
         guard let id = item.id else { return }
         do {

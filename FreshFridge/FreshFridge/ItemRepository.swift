@@ -23,7 +23,6 @@ class ItemRepository: ObservableObject {
 
     init() {
         get()
-        items = items.sorted(by: {$0.quantity < $1.quantity})
     }
     
 //MARK: Retrieving from firebase
@@ -37,6 +36,8 @@ class ItemRepository: ObservableObject {
             self.items = querySnapshot?.documents.compactMap { document in
               try? document.data(as: InventoryItem.self)
             } ?? []
+            //
+            self.items = self.items.sorted(by: { $0.exp < $1.exp })
         }
 
     }

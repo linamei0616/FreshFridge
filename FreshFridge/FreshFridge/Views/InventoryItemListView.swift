@@ -51,7 +51,7 @@ struct InventoryItemListView: View {
                                     Button(action: {
                                         info=AlertInfo(item: result.item, id: .one, title: result.item.name, message: alertInformation(name: result.item.name, quantity: result.item.quantity, expirationDate: ExpDates[result.item.name] ?? 10))
                                     }) {
-                                        GroceryItemLabel(name: result.item.name, image: "", expirationDate: result.exp )
+                                        GroceryItemLabel(name: result.item.name, image: "", expirationDate: result.item.exp )
                                     }
                                     .foregroundColor(lightGrey)
                                     .alert(item: $info, content: { info in

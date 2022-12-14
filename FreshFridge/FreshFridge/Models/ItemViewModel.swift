@@ -18,6 +18,7 @@ class ItemViewModel: ObservableObject, Identifiable {
     var id = "" // need to add all variables here as well
     var name = ""
     var quantity = 0
+    var exp = 0
 
     init(item: InventoryItem) {
         self.item = item
@@ -28,7 +29,8 @@ class ItemViewModel: ObservableObject, Identifiable {
         .store(in: &cancellables)
     }
     func remove() {
-        itemRepository.remove(item)
+//        itemRepository.remove(item)
+//        itemRepository.delete(at: )
     }
     func update() {
         itemRepository.update(item)

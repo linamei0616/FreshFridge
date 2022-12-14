@@ -10,48 +10,48 @@ import FirebaseFirestore
 import FirebaseFirestoreSwift
 import Combine
 import UserNotifications
-// 2
+import FirebaseAuth
+import Firebase
+
 class ItemRepository: ObservableObject {
-  // 3
-  private let path: String = "item"
-  // 4
-  private let store = Firestore.firestore()
-    
-    // 1
+
+    private var path: String = Auth.auth().currentUser?.uid ?? "Unknown User"
+    private let store = Firestore.firestore()
+
     @Published var items: [InventoryItem] = []
 
-    // 2
-    init() {
-      get()
-    }
 
+    init() {
+        get()
+    }
+    
+//MARK: Retrieving from firebase
     func get() {
-      // 3
       store.collection(path)
         .addSnapshotListener { querySnapshot, error in
-          // 4
           if let error = error {
             print("Error getting items: \(error.localizedDescription)")
             return
           }
-          // 5
-          self.items = querySnapshot?.documents.compactMap { document in
-            // 6
+            self.items = querySnapshot?.documents.compactMap { document in
               try? document.data(as: InventoryItem.self)
-          } ?? []
+            } ?? []
+            //
+            self.items = self.items.sorted(by: { $0.exp < $1.exp })
         }
-    }
 
-  // 5
+    }
+    
+//MARK: Adding to firebase
   func add(_ item: InventoryItem) {
     do {
-      // 6
       _ = try store.collection(path).addDocument(from: item)
     } catch {
       fatalError("Unable to add item: \(error.localizedDescription).")
     }
   }
     
+//MARK: Notification for items
     func makenotification(_ item: InventoryItem){
         let content = UNMutableNotificationContent()
         content.title = " \(item.name) About to Expire"
@@ -64,17 +64,21 @@ class ItemRepository: ObservableObject {
         UNUserNotificationCenter.current().add(request)
     }
     
-    func remove(_ item: InventoryItem) {
-      // 1
-      guard let itemId = item.id else { return }
-
-      // 2
-      store.collection(path).document(itemId).delete { error in
-        if let error = error {
-          print("Unable to remove inventoryItem: \(error.localizedDescription)")
+//MARK: Deleting from firebase
+    func delete(at offsets: IndexSet) {
+      offsets.map { items[$0] }.forEach { item in
+        guard let itemID = item.id else { return }
+        store.collection(path).document(itemID).delete() { err in
+          if let err = err {
+            print("Error removing document: \(err)")
+          } else {
+            print("Document successfully removed!")
+          }
         }
       }
     }
+    
+//MARK: Updating firebase
     func update(_ item: InventoryItem) {
         guard let id = item.id else { return }
         do {

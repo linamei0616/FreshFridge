@@ -7,6 +7,22 @@
 
 import SwiftUI
 import FirebaseCore
+import GoogleSignIn
+
+@main
+struct FreshFridgeApp: App {
+     // register app delegate for Firebase setup
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
+    // appDelegate?
+    @StateObject var model = ItemListViewModel()
+    var body: some Scene {
+        WindowGroup {
+            ContentView()
+                .environmentObject(model)
+                .environmentObject(SignUpViewModel())
+        }
+    }
+}
 
 class AppDelegate: NSObject, UIApplicationDelegate {
   func application(_ application: UIApplication,
@@ -15,19 +31,11 @@ class AppDelegate: NSObject, UIApplicationDelegate {
 
     return true
   }
-}
-
-
-@main
-struct FreshFridgeApp: App {
-     // register app delegate for Firebase setup
-    @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
-    @StateObject var model = ItemListViewModel()
-    
-    var body: some Scene {
-        WindowGroup {
-            ContentView()
-                .environmentObject(model)
-        }
+    @available(iOS 9.0, *)
+    // google sign-in auth code
+    func application(_ application: UIApplication, open url: URL,
+                     options: [UIApplication.OpenURLOptionsKey: Any])
+      -> Bool {
+          return GoogleSignIn.GIDSignIn.sharedInstance.handle(url)
     }
 }

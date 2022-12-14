@@ -6,6 +6,8 @@
 //
 
 import SwiftUI
+import Firebase
+import GoogleSignIn
 
 struct ProfileView: View {
     var body: some View {

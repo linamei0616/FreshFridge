@@ -11,71 +11,105 @@ import Firebase
 
 struct InventoryItemListView: View {
     
-    //MARK: - Variables
+    //MARK: - Variables - Firebase data
     @EnvironmentObject var inventoryItemListViewModel : ItemListViewModel // firebase model
     var inventoryItemViewModel: ItemViewModel? = nil
-
+    @EnvironmentObject var signupVM : SignUpViewModel // google SignUp
+    @State private var auth = Auth.auth()
+    
+    //MARK: - Variables - Alerts
     @State var showForm = false
     @State private var showingAlert = false
-    @State var search = "" // Search Bar
     @State private var info: AlertInfo?
-    @State private var quant: String = ""
 
+    //MARK: - Variables - Search Bar
+
+    @State var searchQuery = "" // Search Bar
     
     //MARK: - Colors
     let lightGrey = Color(red: 0.45, green: 0.57, blue: 0.72)
     let pastelBlue = Color(red: 0.77, green: 0.83, blue: 0.92)
     
-    //MARK: - Firebase functs
-//    func deleteItems() {
-//        let item = InventoryItem(name: "banana" , quantity: 5 )
-//        inventoryItemListViewModel.remove(item)
-//    }
-    
     //MARK: - Body
     var body: some View {
-        NavigationView {
-            VStack(alignment: .center) {
-                //MARK: - Firebase
-                GeometryReader { geometry in
-                    ScrollView(.vertical) {
-                        VStack() {
-                            ForEach(inventoryItemListViewModel.itemViewModels) {
-                                result in Button(action: {
-                                    info=AlertInfo(item: result.item, id: .one, title: result.item.name, message: alertInformation(name: result.item.name, quantity: result.item.quantity, expirationDate: ExpDates[result.item.name] ?? 10))
-                                }) {
-                                        GroceryItemLabel(name: result.item.name, image: "", expirationDate: ExpDates[result.item.name] ?? 10)
+        // did not recognize a user, users will need to sign in
+        var display = inventoryItemListViewModel.itemViewModels
+        if (Auth.auth().currentUser == nil) {
+            Button {
+                signupVM.signUpWithGoogle()
+            } label: {
+                Text("Sign in with google")
+                }
+            } else {
+                // recognized user, leads to home page
+                NavigationView {
+                    VStack {
+                        if #available(iOS 16.0, *) {
+                            List {
+                                ForEach(display) {
+                                    result in
+                                    Button(action: {
+                                        info=AlertInfo(item: result.item, id: .one, title: result.item.name, message: alertInformation(name: result.item.name, quantity: result.item.quantity, expirationDate: ExpDates[result.item.name] ?? 10))
+                                    }) {
+                                        GroceryItemLabel(name: result.item.name, image: "", expirationDate: result.item.exp )
                                     }
                                     .foregroundColor(lightGrey)
                                     .alert(item: $info, content: { info in
                                         Alert(title: Text(info.title), message: Text(info.message), primaryButton: .destructive(Text("Edit")), secondaryButton: .cancel())
+                                        
                                     })
-                                    
+                                }
+                                .onDelete(perform: deleteItem)
+                                .listRowSeparator(.hidden)
+                                }
+                            .searchable(text: $searchQuery)
+                            .onSubmit(of: .search) {
+                                if searchQuery.isEmpty {
+                                } else {
+                                    display = display.filter {
+                                    $0.name
+                                      .localizedCaseInsensitiveContains(searchQuery)
+                                  }
+                                }
                             }
-//                            .onDelete(perform: deleteItems())
-//                            .onMove(perform: move)
-                            .searchable(text: $search, placement: .navigationBarDrawer(displayMode: .always))
+                            .onChange(of: searchQuery) { _ in
+                                if searchQuery.isEmpty {
+                                } else {
+                                    display = display.filter {
+                                    $0.name
+                                      .localizedCaseInsensitiveContains(searchQuery)
+                                  }
+                                }
+                            }
+                            .listStyle(.plain)
+                            .scrollContentBackground(.hidden)
+                        } else {
+                            // Fallback on earlier versions
                         }
                     }
+                    // when button is pressed
+                    .sheet(isPresented: $showForm) {
+                        NewInventoryItemForm(inventoryItemListViewModel: ItemListViewModel())
+                    }
+                    .navigationBarTitle("Your Fridge")
+                    .navigationBarItems(trailing: Button(action: { showForm.toggle() }) {
+                        Image(systemName: "plus")
+                            .font(.title)
+                    })
+                    .toolbar{
+                        EditButton()
+                    }
                 }
-            }
-            // when button is pressed
-            .sheet(isPresented: $showForm) {
-                NewInventoryItemForm(inventoryItemListViewModel: ItemListViewModel())
-            }
-            .navigationBarTitle("Your Fridge")
-            .navigationBarItems(trailing: Button(action: { showForm.toggle() }) {
-                Image(systemName: "plus")
-                    .font(.title)
-            })
-//            .navigationBarItems(trailing: Button(action: { showForm.toggle() }) {
-//                Image(systemName: "minus")
-//                    .font(.title)
-//            })
+                .navigationViewStyle(StackNavigationViewStyle())
         }
-        .navigationViewStyle(StackNavigationViewStyle())
         
     }
+    
+    //MARK: - Firebase functs
+    func deleteItem(at indexes:IndexSet) {
+                inventoryItemListViewModel.remove(at: indexes)
+        }
+
 }
 
 struct InventoryItemListView_Previews: PreviewProvider {

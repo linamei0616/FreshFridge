@@ -152,7 +152,6 @@
 		3B6F6E4B2900BF2000242495 /* FreshFridge */ = {
 			isa = PBXGroup;
 			children = (
-				3B16AC802943AB2D008CE17E /* Info.plist */,
 				3BC8D63E292598FB00A55011 /* InventoryItem.swift */,
 				01E1197529074F7100EF825E /* ItemRepository.swift */,
 				3B6F6E4C2900BF2000242495 /* FreshFridgeApp.swift */,
@@ -181,6 +180,7 @@
 		3BC8D638292584C700A55011 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				3B16AC802943AB2D008CE17E /* Info.plist */,
 				01850558292C642800601DC5 /* MainView.swift */,
 				3BAEA49929387D92005510E1 /* AmountWastedScreen.swift */,
 				3BF3377E292C514A00AF0359 /* NewInventoryItemForm.swift */,

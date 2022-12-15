@@ -18,7 +18,6 @@ struct ContentView: View {
                     UNUserNotificationCenter.current().requestAuthorization(options:[.alert, .badge, .sound]) { success, error in
                         if success {
                             print(success)
-                            
                         }
                         else if let error = error{
                             print(error.localizedDescription)
@@ -26,7 +25,6 @@ struct ContentView: View {
                 }
         }
     }
-
 }
 
 private let itemFormatter: DateFormatter = {
@@ -38,12 +36,7 @@ private let itemFormatter: DateFormatter = {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-//        let item = InventoryItem(name: "Banana", quantity: 5)
-//        let itemViewModel = ItemViewModel(item: item)
         let itemListViewModel = ItemListViewModel()
-//        itemListViewModel.itemViewModels.append(itemViewModel)
-//        itemListViewModel.itemViewModels = [itemViewModel]
-//        ContentView(itemListViewModel: itemListViewModel)
         ContentView()
             .environmentObject(itemListViewModel)
     }

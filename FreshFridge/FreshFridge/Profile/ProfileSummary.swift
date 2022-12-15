@@ -6,22 +6,25 @@
 //
 
 import SwiftUI
+import Firebase
+import GoogleSignIn
 
 struct ProfileSummary: View {
     var profile: Profile
+    @EnvironmentObject var signupVM : SignUpViewModel
+    @Environment(\.presentationMode) var presentationMode
 
+    @ViewBuilder
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 10) {
                 Text(profile.username)
                     .bold()
                     .font(.title)
-
                 Text("Notifications: \(profile.prefersNotifications ? "On": "Off" )")
                 Text("Food Wasted: \(profile.seasonalPhoto.rawValue)")
                 Text("Food Saved: ") + Text(profile.goalDate, style: .date)
                 Divider()
-
                                 VStack(alignment: .leading) {
                                     Text("Completed Badges")
                                         .font(.headline)
@@ -38,7 +41,12 @@ struct ProfileSummary: View {
                                         .padding(.bottom)
                                     }
                                 }
-                
+                Button(action: {
+                    presentationMode.wrappedValue.dismiss()
+                    signupVM.signOut()
+                }, label: {
+                    Text("Sign out")
+                })
             }
         }
     }

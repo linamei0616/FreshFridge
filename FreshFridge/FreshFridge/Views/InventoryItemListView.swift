@@ -23,14 +23,14 @@ struct InventoryItemListView: View {
         case second
     }
     @State var showForm = false
-
+    
     @State private var showingAlert = false
     @State private var info: AlertInfo?
     @State var showingDetail = false
     @State var showProfileView = false
-
+    
     //MARK: - Variables - Search Bar
-
+    
     @State var searchQuery = "" // Search Bar
     
     //MARK: - Colors
@@ -39,106 +39,114 @@ struct InventoryItemListView: View {
     
     //MARK: - Body
     var body: some View {
+        /*
+         BUGS:
+         1) database doesn't update automatically after you sign in. only when you rerun, the database shows up
+         2) Edit button doesn't display, also make sure that in firebase it is updated
+         3) Logout crashes users :/ -> /profileHost
+         4) Search bar is broken, but this is not that important right now
+         */
+        
         // did not recognize a user, users will need to sign in
-        var display = inventoryItemListViewModel.itemViewModels
         if (Auth.auth().currentUser == nil) {
             Button {
                 signupVM.signUpWithGoogle()
             } label: {
                 Text("Sign in with google")
-                }
-            } else {
-                // recognized user, leads to home page
-                NavigationView {
-                    VStack {
-                        NavigationLink(
-                                    destination: ProfileScreen(),
-                                    isActive: $showProfileView
-                                ) {
-                                    EmptyView()
-                                }.isDetailLink(false)
-                        if #available(iOS 16.0, *) {
-                            List {
-                                ForEach(display) {
-                                    result in
-                                    Button(action: {
-                                        info=AlertInfo(item: result.item, id: .one, title: result.item.name, message: alertInformation(name: result.item.name, quantity: result.item.quantity, expirationDate: ExpDates[result.item.name] ?? 10))
-                                    }) {
-                                        GroceryItemLabel(name: result.item.name, image: "", expirationDate: result.item.exp )
-                                    }
-                                    .foregroundColor(lightGrey)
-                                    .alert(item: $info, content: { info in
-                                        Alert(title: Text(info.title), message: Text(info.message), primaryButton: .destructive(Text("Edit")) {
-                                            self.showingDetail.toggle()
-                                            }, secondaryButton: .cancel())
-                                        // make primaryButton : editscreen()
-                                    })
+            }
+        } else {
+            var display = inventoryItemListViewModel.itemViewModels
+            // recognized user, leads to home page
+            NavigationView {
+                VStack {
+                    NavigationLink(
+                        destination: ProfileHost(),
+                        isActive: $showProfileView
+                    ) {
+                        EmptyView()
+                    }.isDetailLink(false)
+                    if #available(iOS 16.0, *) {
+                        List {
+                            ForEach(display) {
+                                result in
+                                Button(action: {
+                                    info=AlertInfo(item: result.item, id: .one, title: result.item.name, message: alertInformation(name: result.item.name, quantity: result.item.quantity, expirationDate: ExpDates[result.item.name] ?? 10))
+                                }) {
+                                    GroceryItemLabel(name: result.item.name, image: "", expirationDate: result.item.exp )
                                 }
-                                .onDelete(perform: deleteItem)
-                                .listRowSeparator(.hidden)
-                                }
-                            .searchable(text: $searchQuery)
-                            .onSubmit(of: .search) {
-                                if searchQuery.isEmpty {
-                                } else {
-                                    display = display.filter {
-                                    $0.name
-                                      .localizedCaseInsensitiveContains(searchQuery)
-                                  }
-                                }
+                                .foregroundColor(lightGrey)
+                                .alert(item: $info, content: { info in
+                                    Alert(title: Text(info.title), message: Text(info.message), primaryButton: .destructive(Text("Edit")) {
+                                        self.showingDetail.toggle()
+                                    }, secondaryButton: .cancel())
+                                    // make primaryButton : editscreen()
+                                })
                             }
-                            .onChange(of: searchQuery) { _ in
-                                if searchQuery.isEmpty {
-                                } else {
-                                    display = display.filter {
-                                    $0.name
-                                      .localizedCaseInsensitiveContains(searchQuery)
-                                  }
-                                }
-                            }
-                            .listStyle(.plain)
-                            .scrollContentBackground(.hidden)
-                        } else {
-                            // Fallback on earlier versions
+                            .onDelete(perform: deleteItem)
+                            .listRowSeparator(.hidden)
                         }
+                        .searchable(text: $searchQuery)
+                        .onSubmit(of: .search) {
+                            if searchQuery.isEmpty {
+                            } else {
+                                display = display.filter {
+                                    $0.name
+                                        .localizedCaseInsensitiveContains(searchQuery)
+                                }
+                            }
+                        }
+                        .onChange(of: searchQuery) { _ in
+                            if searchQuery.isEmpty {
+                            } else {
+                                display = display.filter {
+                                    $0.name
+                                        .localizedCaseInsensitiveContains(searchQuery)
+                                }
+                            }
+                        }
+                        .listStyle(.plain)
+                        .scrollContentBackground(.hidden)
+                    } else {
+                        // Fallback on earlier versions
                     }
-                    // when button is pressed
-                    .sheet(isPresented: $showForm) {
-                        NewInventoryItemForm(inventoryItemListViewModel: ItemListViewModel())
-                    }
-                    .navigationBarTitle("Your Fridge")
-                    .navigationBarItems(trailing: Button(action: { showForm.toggle() }) {
-                        Image(systemName: "plus")
-                            .font(.title)
-                    })
-                    .navigationBarItems(leading:
-                           Button(action: {
-                               self.showProfileView = true
-                           }) {
-                               Image(systemName: "person.crop.circle")
-                                   .font(.title)
-                           }
-                       )
-                    .toolbar{
-                        EditButton()
-                    }
-                    
                 }
-                .navigationViewStyle(StackNavigationViewStyle())
+                // when button is pressed
+                .sheet(isPresented: $showForm) {
+                    NewInventoryItemForm(inventoryItemListViewModel: ItemListViewModel())
+                }
+                .navigationBarTitle("Your Fridge")
+                .navigationBarItems(trailing: Button(action: { showForm.toggle() }) {
+                    Image(systemName: "plus")
+                        .font(.title)
+                })
+                .navigationBarItems(leading:
+                                        Button(action: {
+                    self.showProfileView = true
+                }) {
+                    Image(systemName: "person.crop.circle")
+                        .font(.title)
+                }
+                )
+                .toolbar{
+                    EditButton()
+                }
+                
+            }
+            .navigationViewStyle(StackNavigationViewStyle())
         }
         
     }
     
     //MARK: - Firebase functs
     func deleteItem(at indexes:IndexSet) {
-                inventoryItemListViewModel.remove(at: indexes)
-        }
-
+        inventoryItemListViewModel.remove(at: indexes)
+    }
+    
 }
 
 struct InventoryItemListView_Previews: PreviewProvider {
-  static var previews: some View {
-      InventoryItemListView()
-          .environmentObject(ItemListViewModel())
-  }
+    static var previews: some View {
+        InventoryItemListView()
+            .environmentObject(ItemListViewModel())
+    }
 }

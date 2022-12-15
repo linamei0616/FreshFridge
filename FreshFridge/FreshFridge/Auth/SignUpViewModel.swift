@@ -12,20 +12,27 @@ import GoogleSignIn
 
 class SignUpViewModel: ObservableObject {
     
-//    @Published var isLogin: Bool = false
-    // user id : user.uid
-    @Published var userID: String = ""
-    @Published var itemRepository = ItemRepository()
-
-    
     enum SignInState {
       case signedIn
       case signedOut
     }
-    
+
+    @Published var userID: String = ""
+    @Published var itemRepository = ItemRepository()
     @Published var state: SignInState = .signedOut
 
     
+    func signOut() {
+        let firebaseAuth = Auth.auth()
+        do {
+          try firebaseAuth.signOut()
+        } catch let signOutError as NSError {
+          print("Error signing out: %@", signOutError)
+        }
+        self.state = .signedOut
+        print("success signing out")
+    }
+
     func signUpWithGoogle() {
         // get app client id
         guard let clientId = FirebaseApp.app()?.options.clientID else { return }

@@ -11,7 +11,7 @@ import GoogleSignIn
 
 @main
 struct FreshFridgeApp: App {
-     // register app delegate for Firebase setup
+     // register app delegate 
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
     // appDelegate?
     @StateObject var model = ItemListViewModel()

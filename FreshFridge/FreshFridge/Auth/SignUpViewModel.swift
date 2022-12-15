@@ -30,7 +30,7 @@ class SignUpViewModel: ObservableObject {
           print("Error signing out: %@", signOutError)
         }
         self.state = .signedOut
-        print("success signing out")
+//        print("success signing out")
     }
 
     func signUpWithGoogle() {

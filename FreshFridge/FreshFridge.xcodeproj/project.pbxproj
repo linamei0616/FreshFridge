@@ -8,10 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		01850559292C642800601DC5 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01850558292C642800601DC5 /* MainView.swift */; };
-		01DCC917294A8F32009CEC09 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01DCC916294A8F32009CEC09 /* Profile.swift */; };
-		01DCC919294A8FD8009CEC09 /* ProfileHost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01DCC918294A8FD8009CEC09 /* ProfileHost.swift */; };
-		01DCC91B294A9032009CEC09 /* ProfileSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01DCC91A294A9032009CEC09 /* ProfileSummary.swift */; };
-		01DCC91D294A9129009CEC09 /* Badges.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01DCC91C294A9129009CEC09 /* Badges.swift */; };
 		01E119612907494400EF825E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 01E119602907494300EF825E /* GoogleService-Info.plist */; };
 		01E1197629074F7100EF825E /* ItemRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E1197529074F7100EF825E /* ItemRepository.swift */; };
 		01E1197A290752EC00EF825E /* ItemListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E11979290752EC00EF825E /* ItemListViewModel.swift */; };
@@ -38,6 +34,8 @@
 		3BAEA49A29387D92005510E1 /* AmountWastedScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BAEA49929387D92005510E1 /* AmountWastedScreen.swift */; };
 		3BC8D63F292598FB00A55011 /* InventoryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC8D63E292598FB00A55011 /* InventoryItem.swift */; };
 		3BD9B7B92939D9BB00A076E2 /* AlertInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BD9B7B82939D9BB00A076E2 /* AlertInfo.swift */; };
+		3BE2337C294A9E86006E57A3 /* EditScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE2337B294A9E86006E57A3 /* EditScreen.swift */; };
+		3BE2337E294AAF42006E57A3 /* ProfileScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE2337D294AAF42006E57A3 /* ProfileScreen.swift */; };
 		3BF33777292C4EE600AF0359 /* InventoryItemListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF33776292C4EE500AF0359 /* InventoryItemListView.swift */; };
 		3BF3377B292C50A600AF0359 /* GroceryItemLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF3377A292C50A600AF0359 /* GroceryItemLabel.swift */; };
 		3BF3377F292C514A00AF0359 /* NewInventoryItemForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF3377E292C514A00AF0359 /* NewInventoryItemForm.swift */; };
@@ -48,10 +46,6 @@
 
 /* Begin PBXFileReference section */
 		01850558292C642800601DC5 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
-		01DCC916294A8F32009CEC09 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
-		01DCC918294A8FD8009CEC09 /* ProfileHost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHost.swift; sourceTree = "<group>"; };
-		01DCC91A294A9032009CEC09 /* ProfileSummary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSummary.swift; sourceTree = "<group>"; };
-		01DCC91C294A9129009CEC09 /* Badges.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Badges.swift; sourceTree = "<group>"; };
 		01E119602907494300EF825E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		01E1197529074F7100EF825E /* ItemRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemRepository.swift; sourceTree = "<group>"; };
 		01E11979290752EC00EF825E /* ItemListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemListViewModel.swift; sourceTree = "<group>"; };
@@ -69,6 +63,8 @@
 		3BAEA49929387D92005510E1 /* AmountWastedScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmountWastedScreen.swift; sourceTree = "<group>"; };
 		3BC8D63E292598FB00A55011 /* InventoryItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryItem.swift; sourceTree = "<group>"; };
 		3BD9B7B82939D9BB00A076E2 /* AlertInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertInfo.swift; sourceTree = "<group>"; };
+		3BE2337B294A9E86006E57A3 /* EditScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditScreen.swift; sourceTree = "<group>"; };
+		3BE2337D294AAF42006E57A3 /* ProfileScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileScreen.swift; sourceTree = "<group>"; };
 		3BF33776292C4EE500AF0359 /* InventoryItemListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InventoryItemListView.swift; sourceTree = "<group>"; };
 		3BF3377A292C50A600AF0359 /* GroceryItemLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroceryItemLabel.swift; sourceTree = "<group>"; };
 		3BF3377E292C514A00AF0359 /* NewInventoryItemForm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewInventoryItemForm.swift; sourceTree = "<group>"; };
@@ -171,7 +167,8 @@
 				3BF3377E292C514A00AF0359 /* NewInventoryItemForm.swift */,
 				3BF33776292C4EE500AF0359 /* InventoryItemListView.swift */,
 				3B6F6E4E2900BF2000242495 /* ContentView.swift */,
-				3BD0CA2329187CDD00489700 /* ProfileView.swift */,
+				3BE2337B294A9E86006E57A3 /* EditScreen.swift */,
+				3BE2337D294AAF42006E57A3 /* ProfileScreen.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -290,26 +287,19 @@
 				3B82EAF32943CDBC00DB0F59 /* SignUpViewModel.swift in Sources */,
 				3B6F6E4F2900BF2000242495 /* ContentView.swift in Sources */,
 				3B1FEF40292305EE009873ED /* ItemViewModel.swift in Sources */,
-				01E74801294A978A007F03B6 /* BadgeBackground.swift in Sources */,
-				01E74805294A978F007F03B6 /* HexagonParameters.swift in Sources */,
 				3B6F6E4D2900BF2000242495 /* FreshFridgeApp.swift in Sources */,
 				3B93C0102943A345009EC772 /* LoginScreen.swift in Sources */,
 				3BF33777292C4EE600AF0359 /* InventoryItemListView.swift in Sources */,
+				3BE2337C294A9E86006E57A3 /* EditScreen.swift in Sources */,
 				01850559292C642800601DC5 /* MainView.swift in Sources */,
 				3BC8D63F292598FB00A55011 /* InventoryItem.swift in Sources */,
-				01E74807294A9793007F03B6 /* RotatedBadgeSymbol.swift in Sources */,
 				01E1197A290752EC00EF825E /* ItemListViewModel.swift in Sources */,
-				01DCC917294A8F32009CEC09 /* Profile.swift in Sources */,
 				3BF3377B292C50A600AF0359 /* GroceryItemLabel.swift in Sources */,
-				01DCC919294A8FD8009CEC09 /* ProfileHost.swift in Sources */,
-				01DCC91B294A9032009CEC09 /* ProfileSummary.swift in Sources */,
-				01E74803294A978C007F03B6 /* BadgeSymbol.swift in Sources */,
+				3BE2337E294AAF42006E57A3 /* ProfileScreen.swift in Sources */,
 				3BAEA49629387576005510E1 /* ExpDateFunct.swift in Sources */,
 				3BD9B7B92939D9BB00A076E2 /* AlertInfo.swift in Sources */,
-				01DCC91D294A9129009CEC09 /* Badges.swift in Sources */,
 				01E1197629074F7100EF825E /* ItemRepository.swift in Sources */,
 				3BAEA49A29387D92005510E1 /* AmountWastedScreen.swift in Sources */,
-				01E747FF294A9786007F03B6 /* Badge.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

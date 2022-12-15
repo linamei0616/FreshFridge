@@ -28,12 +28,8 @@ class ItemViewModel: ObservableObject, Identifiable {
         .assign(to: \.id, on: self)
         .store(in: &cancellables)
     }
-    func remove() {
-//        itemRepository.remove(item)
-//        itemRepository.delete(at: )
-    }
-    func update() {
-        itemRepository.update(item)
-    }
+//    func update() {
+//        itemRepository.update(item)
+//    }
 }
 

@@ -18,9 +18,16 @@ struct InventoryItemListView: View {
     @State private var auth = Auth.auth()
     
     //MARK: - Variables - Alerts
+    enum ActiveForm {
+        case first
+        case second
+    }
     @State var showForm = false
+
     @State private var showingAlert = false
     @State private var info: AlertInfo?
+    @State var showingDetail = false
+    @State var showProfileView = false
 
     //MARK: - Variables - Search Bar
 
@@ -44,6 +51,12 @@ struct InventoryItemListView: View {
                 // recognized user, leads to home page
                 NavigationView {
                     VStack {
+                        NavigationLink(
+                                    destination: ProfileScreen(),
+                                    isActive: $showProfileView
+                                ) {
+                                    EmptyView()
+                                }.isDetailLink(false)
                         if #available(iOS 16.0, *) {
                             List {
                                 ForEach(display) {
@@ -55,8 +68,10 @@ struct InventoryItemListView: View {
                                     }
                                     .foregroundColor(lightGrey)
                                     .alert(item: $info, content: { info in
-                                        Alert(title: Text(info.title), message: Text(info.message), primaryButton: .destructive(Text("Edit")), secondaryButton: .cancel())
-                                        
+                                        Alert(title: Text(info.title), message: Text(info.message), primaryButton: .destructive(Text("Edit")) {
+                                            self.showingDetail.toggle()
+                                            }, secondaryButton: .cancel())
+                                        // make primaryButton : editscreen()
                                     })
                                 }
                                 .onDelete(perform: deleteItem)
@@ -96,9 +111,18 @@ struct InventoryItemListView: View {
                         Image(systemName: "plus")
                             .font(.title)
                     })
+                    .navigationBarItems(leading:
+                           Button(action: {
+                               self.showProfileView = true
+                           }) {
+                               Image(systemName: "person.crop.circle")
+                                   .font(.title)
+                           }
+                       )
                     .toolbar{
                         EditButton()
                     }
+                    
                 }
                 .navigationViewStyle(StackNavigationViewStyle())
         }

@@ -35,7 +35,6 @@
 		3BC8D63F292598FB00A55011 /* InventoryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC8D63E292598FB00A55011 /* InventoryItem.swift */; };
 		3BD9B7B92939D9BB00A076E2 /* AlertInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BD9B7B82939D9BB00A076E2 /* AlertInfo.swift */; };
 		3BE2337C294A9E86006E57A3 /* EditScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE2337B294A9E86006E57A3 /* EditScreen.swift */; };
-		3BE2337E294AAF42006E57A3 /* ProfileScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE2337D294AAF42006E57A3 /* ProfileScreen.swift */; };
 		3BE23389294AB8E5006E57A3 /* RotatedBadgeSymbol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE23380294AB8E5006E57A3 /* RotatedBadgeSymbol.swift */; };
 		3BE2338A294AB8E5006E57A3 /* ProfileSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE23381294AB8E5006E57A3 /* ProfileSummary.swift */; };
 		3BE2338B294AB8E5006E57A3 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE23382294AB8E5006E57A3 /* Profile.swift */; };
@@ -43,7 +42,7 @@
 		3BE2338D294AB8E5006E57A3 /* HexagonParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE23384294AB8E5006E57A3 /* HexagonParameters.swift */; };
 		3BE2338E294AB8E5006E57A3 /* BadgeSymbol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE23385294AB8E5006E57A3 /* BadgeSymbol.swift */; };
 		3BE2338F294AB8E5006E57A3 /* BadgeBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE23386294AB8E5006E57A3 /* BadgeBackground.swift */; };
-		3BE23390294AB8E5006E57A3 /* ProfileHost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE23387294AB8E5006E57A3 /* ProfileHost.swift */; };
+		3BE23390294AB8E5006E57A3 /* ProfileScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE23387294AB8E5006E57A3 /* ProfileScreen.swift */; };
 		3BE23391294AB8E5006E57A3 /* Badge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE23388294AB8E5006E57A3 /* Badge.swift */; };
 		3BF33777292C4EE600AF0359 /* InventoryItemListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF33776292C4EE500AF0359 /* InventoryItemListView.swift */; };
 		3BF3377B292C50A600AF0359 /* GroceryItemLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF3377A292C50A600AF0359 /* GroceryItemLabel.swift */; };
@@ -73,7 +72,6 @@
 		3BC8D63E292598FB00A55011 /* InventoryItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryItem.swift; sourceTree = "<group>"; };
 		3BD9B7B82939D9BB00A076E2 /* AlertInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertInfo.swift; sourceTree = "<group>"; };
 		3BE2337B294A9E86006E57A3 /* EditScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditScreen.swift; sourceTree = "<group>"; };
-		3BE2337D294AAF42006E57A3 /* ProfileScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileScreen.swift; sourceTree = "<group>"; };
 		3BE23380294AB8E5006E57A3 /* RotatedBadgeSymbol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RotatedBadgeSymbol.swift; sourceTree = "<group>"; };
 		3BE23381294AB8E5006E57A3 /* ProfileSummary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileSummary.swift; sourceTree = "<group>"; };
 		3BE23382294AB8E5006E57A3 /* Profile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
@@ -81,7 +79,7 @@
 		3BE23384294AB8E5006E57A3 /* HexagonParameters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HexagonParameters.swift; sourceTree = "<group>"; };
 		3BE23385294AB8E5006E57A3 /* BadgeSymbol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BadgeSymbol.swift; sourceTree = "<group>"; };
 		3BE23386294AB8E5006E57A3 /* BadgeBackground.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BadgeBackground.swift; sourceTree = "<group>"; };
-		3BE23387294AB8E5006E57A3 /* ProfileHost.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileHost.swift; sourceTree = "<group>"; };
+		3BE23387294AB8E5006E57A3 /* ProfileScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileScreen.swift; sourceTree = "<group>"; };
 		3BE23388294AB8E5006E57A3 /* Badge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Badge.swift; sourceTree = "<group>"; };
 		3BF33776292C4EE500AF0359 /* InventoryItemListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InventoryItemListView.swift; sourceTree = "<group>"; };
 		3BF3377A292C50A600AF0359 /* GroceryItemLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroceryItemLabel.swift; sourceTree = "<group>"; };
@@ -187,7 +185,7 @@
 				3BF33776292C4EE500AF0359 /* InventoryItemListView.swift */,
 				3B6F6E4E2900BF2000242495 /* ContentView.swift */,
 				3BE2337B294A9E86006E57A3 /* EditScreen.swift */,
-				3BE2337D294AAF42006E57A3 /* ProfileScreen.swift */,
+				3BE23387294AB8E5006E57A3 /* ProfileScreen.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -220,7 +218,6 @@
 				3BE23384294AB8E5006E57A3 /* HexagonParameters.swift */,
 				3BE23385294AB8E5006E57A3 /* BadgeSymbol.swift */,
 				3BE23386294AB8E5006E57A3 /* BadgeBackground.swift */,
-				3BE23387294AB8E5006E57A3 /* ProfileHost.swift */,
 				3BE23388294AB8E5006E57A3 /* Badge.swift */,
 			);
 			path = Profile;
@@ -322,7 +319,7 @@
 				3BE2338A294AB8E5006E57A3 /* ProfileSummary.swift in Sources */,
 				3B82EAF32943CDBC00DB0F59 /* SignUpViewModel.swift in Sources */,
 				3B6F6E4F2900BF2000242495 /* ContentView.swift in Sources */,
-				3BE23390294AB8E5006E57A3 /* ProfileHost.swift in Sources */,
+				3BE23390294AB8E5006E57A3 /* ProfileScreen.swift in Sources */,
 				3BE2338E294AB8E5006E57A3 /* BadgeSymbol.swift in Sources */,
 				3BE23391294AB8E5006E57A3 /* Badge.swift in Sources */,
 				3B1FEF40292305EE009873ED /* ItemViewModel.swift in Sources */,
@@ -336,7 +333,6 @@
 				3BE2338C294AB8E5006E57A3 /* Badges.swift in Sources */,
 				01E1197A290752EC00EF825E /* ItemListViewModel.swift in Sources */,
 				3BF3377B292C50A600AF0359 /* GroceryItemLabel.swift in Sources */,
-				3BE2337E294AAF42006E57A3 /* ProfileScreen.swift in Sources */,
 				3BE2338F294AB8E5006E57A3 /* BadgeBackground.swift in Sources */,
 				3BAEA49629387576005510E1 /* ExpDateFunct.swift in Sources */,
 				3BD9B7B92939D9BB00A076E2 /* AlertInfo.swift in Sources */,

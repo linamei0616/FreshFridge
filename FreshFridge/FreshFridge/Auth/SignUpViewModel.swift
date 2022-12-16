@@ -18,7 +18,7 @@ class SignUpViewModel: ObservableObject {
     }
 
     @Published var userID: String = ""
-    @Published var itemRepository = ItemRepository()
+    @Published var userDisplayName: String = ""
     @Published var state: SignInState = .signedOut
 
     
@@ -30,6 +30,7 @@ class SignUpViewModel: ObservableObject {
           print("Error signing out: %@", signOutError)
         }
         self.state = .signedOut
+        self.userID = ""
 //        print("success signing out")
     }
 
@@ -68,6 +69,7 @@ class SignUpViewModel: ObservableObject {
                 guard let user = authResult?.user else { return }
                 print(user.displayName as Any)
                 self.userID = user.uid
+                self.userDisplayName = user.displayName ?? "Jane Doe"
                 self.state = .signedIn
 //                self.isLogin.toggle()
                 //                self.itemRepository.auth(id: user.uid)

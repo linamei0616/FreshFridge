@@ -23,7 +23,6 @@ struct InventoryItemListView: View {
         case second
     }
     @State var showForm = false
-    
     @State private var showingAlert = false
     @State private var info: AlertInfo?
     @State var showingDetail = false
@@ -49,10 +48,16 @@ struct InventoryItemListView: View {
         
         // did not recognize a user, users will need to sign in
         if (Auth.auth().currentUser == nil) {
-            Button {
-                signupVM.signUpWithGoogle()
-            } label: {
-                Text("Sign in with google")
+            VStack {
+                Image("fridgeview-transparent blue")
+                    .resizable()
+                    .scaledToFit()
+                    .aspectRatio(contentMode: .fit)
+                Button {
+                    signupVM.signUpWithGoogle()
+                } label: {
+                    Text("Sign in with google")
+                }
             }
         } else {
             var display = inventoryItemListViewModel.itemViewModels

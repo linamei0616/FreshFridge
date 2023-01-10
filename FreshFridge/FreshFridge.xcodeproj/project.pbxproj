@@ -69,6 +69,7 @@
 		3BCA6B02296D08CB00A231A1 /* InventoryItemListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InventoryItemListView.swift; path = "../../../../FreshFridge copy/FreshFridge/FreshFridge/Views/InventoryItemListView.swift"; sourceTree = "<group>"; };
 		3BCA6B04296D08F400A231A1 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3BCA6B06296D091A00A231A1 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContentView.swift; path = "../../../../FreshFridge copy/FreshFridge/FreshFridge/Views/ContentView.swift"; sourceTree = "<group>"; };
+		3BCA6B08296D0AA500A231A1 /* FreshFridge.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FreshFridge.entitlements; sourceTree = "<group>"; };
 		3BD9B7B82939D9BB00A076E2 /* AlertInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertInfo.swift; sourceTree = "<group>"; };
 		3BE2337B294A9E86006E57A3 /* EditScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditScreen.swift; sourceTree = "<group>"; };
 		3BE23380294AB8E5006E57A3 /* RotatedBadgeSymbol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RotatedBadgeSymbol.swift; sourceTree = "<group>"; };
@@ -148,6 +149,7 @@
 		3B6F6E4B2900BF2000242495 /* FreshFridge */ = {
 			isa = PBXGroup;
 			children = (
+				3BCA6B08296D0AA500A231A1 /* FreshFridge.entitlements */,
 				3BC8D63E292598FB00A55011 /* InventoryItem.swift */,
 				01E1197529074F7100EF825E /* ItemRepository.swift */,
 				3B6F6E4C2900BF2000242495 /* FreshFridgeApp.swift */,
@@ -461,6 +463,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = FreshFridge/FreshFridge.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"FreshFridge/Preview Content\"";
@@ -495,6 +498,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = FreshFridge/FreshFridge.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"FreshFridge/Preview Content\"";

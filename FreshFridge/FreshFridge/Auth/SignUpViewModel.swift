@@ -21,8 +21,13 @@ class SignUpViewModel: ObservableObject {
     @Published var userDisplayName: String = ""
     @Published var state: SignInState = .signedOut
 
+    func signInWithApple() {
+//        userID = user.uid
+        userDisplayName = "Jane Doe"
+        state = .signedIn
+    }
     
-    func signOut() {
+    func signOutWithGoogle() {
         let firebaseAuth = Auth.auth()
         do {
           try firebaseAuth.signOut()

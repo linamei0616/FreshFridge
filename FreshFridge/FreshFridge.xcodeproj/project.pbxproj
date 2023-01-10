@@ -31,7 +31,6 @@
 		3BAEA49629387576005510E1 /* ExpDateFunct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BAEA49529387576005510E1 /* ExpDateFunct.swift */; };
 		3BAEA49A29387D92005510E1 /* AmountWastedScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BAEA49929387D92005510E1 /* AmountWastedScreen.swift */; };
 		3BC8D63F292598FB00A55011 /* InventoryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC8D63E292598FB00A55011 /* InventoryItem.swift */; };
-		3BCA6B03296D08CB00A231A1 /* InventoryItemListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BCA6B02296D08CB00A231A1 /* InventoryItemListView.swift */; };
 		3BCA6B07296D091A00A231A1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BCA6B06296D091A00A231A1 /* ContentView.swift */; };
 		3BD9B7B92939D9BB00A076E2 /* AlertInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BD9B7B82939D9BB00A076E2 /* AlertInfo.swift */; };
 		3BE2337C294A9E86006E57A3 /* EditScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE2337B294A9E86006E57A3 /* EditScreen.swift */; };
@@ -66,7 +65,6 @@
 		3BAEA49529387576005510E1 /* ExpDateFunct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpDateFunct.swift; sourceTree = "<group>"; };
 		3BAEA49929387D92005510E1 /* AmountWastedScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmountWastedScreen.swift; sourceTree = "<group>"; };
 		3BC8D63E292598FB00A55011 /* InventoryItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryItem.swift; sourceTree = "<group>"; };
-		3BCA6B02296D08CB00A231A1 /* InventoryItemListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InventoryItemListView.swift; path = "../../../../FreshFridge copy/FreshFridge/FreshFridge/Views/InventoryItemListView.swift"; sourceTree = "<group>"; };
 		3BCA6B04296D08F400A231A1 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3BCA6B06296D091A00A231A1 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContentView.swift; path = "../../../../FreshFridge copy/FreshFridge/FreshFridge/Views/ContentView.swift"; sourceTree = "<group>"; };
 		3BCA6B08296D0AA500A231A1 /* FreshFridge.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FreshFridge.entitlements; sourceTree = "<group>"; };
@@ -180,7 +178,6 @@
 			isa = PBXGroup;
 			children = (
 				3BAEA49929387D92005510E1 /* AmountWastedScreen.swift */,
-				3BCA6B02296D08CB00A231A1 /* InventoryItemListView.swift */,
 				3BCA6B06296D091A00A231A1 /* ContentView.swift */,
 				3BF3377E292C514A00AF0359 /* NewInventoryItemForm.swift */,
 				3BE2337B294A9E86006E57A3 /* EditScreen.swift */,
@@ -316,7 +313,6 @@
 				3B16AC8B2943B33F008CE17E /* Application.swift in Sources */,
 				3BF3377F292C514A00AF0359 /* NewInventoryItemForm.swift in Sources */,
 				3BE2338A294AB8E5006E57A3 /* ProfileSummary.swift in Sources */,
-				3BCA6B03296D08CB00A231A1 /* InventoryItemListView.swift in Sources */,
 				3B82EAF32943CDBC00DB0F59 /* SignUpViewModel.swift in Sources */,
 				3BE23390294AB8E5006E57A3 /* ProfileScreen.swift in Sources */,
 				3BE2338E294AB8E5006E57A3 /* BadgeSymbol.swift in Sources */,

@@ -54,7 +54,7 @@ struct ProfileSummary: View {
                         .padding()
                 Button(action: {
                     presentationMode.wrappedValue.dismiss()
-                    signupVM.signOut()
+                    signupVM.signOutWithGoogle()
                 }, label: {
                     Text("Sign out")
                 })

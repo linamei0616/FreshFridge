@@ -20,7 +20,8 @@ class SignUpViewModel: ObservableObject {
     @Published var userID: String = ""
     @Published var userDisplayName: String = ""
     @Published var state: SignInState = .signedOut
-
+    @Published var auth: User?
+    
     func signInWithApple() {
 //        userID = user.uid
         userDisplayName = "Jane Doe"
@@ -34,8 +35,8 @@ class SignUpViewModel: ObservableObject {
         } catch let signOutError as NSError {
           print("Error signing out: %@", signOutError)
         }
-        self.state = .signedOut
         self.userID = ""
+        self.state = .signedOut
 //        print("success signing out")
     }
 
@@ -64,7 +65,6 @@ class SignUpViewModel: ObservableObject {
 
             let credential = GoogleAuthProvider.credential(withIDToken: idToken,
                                                            accessToken: authentication.accessToken)
-
             
             Auth.auth().signIn(with: credential) { authResult, error in
                 if error != nil {
@@ -76,8 +76,6 @@ class SignUpViewModel: ObservableObject {
                 self.userID = user.uid
                 self.userDisplayName = user.displayName ?? "Jane Doe"
                 self.state = .signedIn
-//                self.isLogin.toggle()
-                //                self.itemRepository.auth(id: user.uid)
             }
         }
     }

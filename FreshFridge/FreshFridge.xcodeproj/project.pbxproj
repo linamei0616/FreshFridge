@@ -121,7 +121,6 @@
 		3B16AC8C2943B4DB008CE17E /* Auth */ = {
 			isa = PBXGroup;
 			children = (
-				3B93C00F2943A345009EC772 /* LoginScreen.swift */,
 				3B82EAF22943CDBC00DB0F59 /* SignUpViewModel.swift */,
 				3B16AC8A2943B33F008CE17E /* Application.swift */,
 			);
@@ -156,6 +155,7 @@
 				3BD9B7BA2939DFC200A076E2 /* Modifiers */,
 				3BC8D639292584ED00A55011 /* Models */,
 				3BC8D638292584C700A55011 /* Views */,
+				3BC362B7296D17AB004CD8C6 /* Unused Files */,
 				3BE2337F294AB8E5006E57A3 /* Profile */,
 				3B16AC7D2943A8C6008CE17E /* Launch Screens */,
 				3B6F6E502900BF2100242495 /* Assets.xcassets */,
@@ -174,10 +174,18 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		3BC8D638292584C700A55011 /* Views */ = {
+		3BC362B7296D17AB004CD8C6 /* Unused Files */ = {
 			isa = PBXGroup;
 			children = (
 				3BAEA49929387D92005510E1 /* AmountWastedScreen.swift */,
+				3B93C00F2943A345009EC772 /* LoginScreen.swift */,
+			);
+			path = "Unused Files";
+			sourceTree = "<group>";
+		};
+		3BC8D638292584C700A55011 /* Views */ = {
+			isa = PBXGroup;
+			children = (
 				3BCA6B06296D091A00A231A1 /* ContentView.swift */,
 				3BF3377E292C514A00AF0359 /* NewInventoryItemForm.swift */,
 				3BE2337B294A9E86006E57A3 /* EditScreen.swift */,

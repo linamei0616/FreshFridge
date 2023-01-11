@@ -13,8 +13,24 @@ struct ProfileSummary: View {
     @State var profile: Profile
     @EnvironmentObject var signupVM : SignUpViewModel
     @Environment(\.presentationMode) var presentationMode
+    
     @State var shareCode: String = ""
-
+//    @Binding var auth : User?
+    
+    func signOutWithApple() {
+        let firebaseAuth = Auth.auth()
+        do {
+          try firebaseAuth.signOut()
+            print("signing out")
+//            auth = nilx
+        } catch let signOutError as NSError {
+          print("Error signing out: %@", signOutError)
+        }
+//        self.userID = ""
+//        self.state = .signedOut
+//        print("success signing out")
+    }
+    
     @ViewBuilder
     var body: some View {
         ScrollView {
@@ -54,7 +70,8 @@ struct ProfileSummary: View {
                         .padding()
                 Button(action: {
                     presentationMode.wrappedValue.dismiss()
-                    signupVM.signOutWithGoogle()
+//                    signupVM.signOutWithGoogle()
+                    signOutWithApple()
                 }, label: {
                     Text("Sign out")
                 })
@@ -62,9 +79,9 @@ struct ProfileSummary: View {
         }
     }
 }
-
-struct ProfileSummary_Previews: PreviewProvider {
-    static var previews: some View {
-        ProfileSummary(profile: Profile(username: ""))
-    }
-}
+//
+//struct ProfileSummary_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ProfileSummary(profile: Profile(username: ""))
+//    }
+//}

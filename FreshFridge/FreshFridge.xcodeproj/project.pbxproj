@@ -469,7 +469,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = FreshFridge/FreshFridge.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2.1;
 				DEVELOPMENT_ASSET_PATHS = "\"FreshFridge/Preview Content\"";
 				DEVELOPMENT_TEAM = 64X46M5SHC;
 				ENABLE_PREVIEWS = YES;
@@ -485,7 +485,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 2.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.LinaMei.FreshFridge;
 				PRODUCT_NAME = FridgeView;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -504,7 +504,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = FreshFridge/FreshFridge.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2.1;
 				DEVELOPMENT_ASSET_PATHS = "\"FreshFridge/Preview Content\"";
 				DEVELOPMENT_TEAM = 64X46M5SHC;
 				ENABLE_PREVIEWS = YES;
@@ -520,7 +520,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 2.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.LinaMei.FreshFridge;
 				PRODUCT_NAME = FridgeView;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";

@@ -10,6 +10,24 @@ import SwiftUI
 import Firebase
 import GoogleSignIn
 
+//public var authUser = Auth.auth().currentUser
+
+class globalAuth: ObservableObject {
+//    static let shared = globalAuth() // creates a singleton object
+    @Published var currUser = Auth.auth().currentUser
+//    @State var authUser = Auth.auth().currentUser
+    func signingOut() {
+        print("signingOut() ran")
+        DispatchQueue.main.async {
+            self.currUser = nil
+        }
+    }
+    func loggedIn() {
+        print("LoggedIn() ran")
+        print(currUser as Any)
+    }
+}
+
 class SignUpViewModel: ObservableObject {
     
     enum SignInState {
@@ -20,7 +38,20 @@ class SignUpViewModel: ObservableObject {
     @Published var userID: String = ""
     @Published var userDisplayName: String = ""
     @Published var state: SignInState = .signedOut
-    @Published var auth: User?
+    
+    
+//    func updateAuth(newUser: User) {
+//        globalAuth.shared.authUser = newUser
+//        print(newUser as Any)
+//    }
+//    func signOutAuth() {
+//        globalAuth.shared.authUser = nil
+//        print(globalAuth.shared.authUser as Any)
+//    }
+//    func retrieveAuth() -> User? {
+//        guard let result = globalAuth.shared.authUser else { return nil }
+//        return result
+//    }
     
     func signInWithApple() {
 //        userID = user.uid
@@ -32,6 +63,7 @@ class SignUpViewModel: ObservableObject {
         let firebaseAuth = Auth.auth()
         do {
           try firebaseAuth.signOut()
+            print("User has signed out")
         } catch let signOutError as NSError {
           print("Error signing out: %@", signOutError)
         }

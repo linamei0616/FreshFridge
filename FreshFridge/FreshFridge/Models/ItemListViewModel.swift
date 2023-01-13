@@ -37,5 +37,8 @@ class ItemListViewModel: ObservableObject {
     func update(_ item: InventoryItem) {
         itemRepository.update(item)
     }
+    func updatePoundsWasted(_ item: InventoryItem) {
+        itemRepository.updatePoundsWasted(item)
+    }
 }
 

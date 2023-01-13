@@ -20,6 +20,7 @@ struct FreshFridgeApp: App {
             ContentView()
                 .environmentObject(model)
                 .environmentObject(SignUpViewModel())
+                .environmentObject(globalAuth())
         }
     }
 }

@@ -12,7 +12,9 @@ import GoogleSignIn
 struct ProfileSummary: View {
     @State var profile: Profile
     @EnvironmentObject var signupVM : SignUpViewModel
+    @EnvironmentObject var userAuth : globalAuth
     @Environment(\.presentationMode) var presentationMode
+    
     
     @State var shareCode: String = ""
 //    @Binding var auth : User?
@@ -22,6 +24,8 @@ struct ProfileSummary: View {
         do {
           try firebaseAuth.signOut()
             print("signing out")
+            userAuth.signingOut()
+//            userAuth.currUser = nil
 //            auth = nilx
         } catch let signOutError as NSError {
           print("Error signing out: %@", signOutError)
@@ -29,6 +33,7 @@ struct ProfileSummary: View {
 //        self.userID = ""
 //        self.state = .signedOut
 //        print("success signing out")
+        print("finished sign out with apple function")
     }
     
     @ViewBuilder
@@ -41,7 +46,6 @@ struct ProfileSummary: View {
                 Text("Notifications: \(profile.prefersNotifications ? "On": "Off" )")
 //                Text("Food Wasted: \(profile.seasonalPhoto.rawValue)")
                 Text("Food Wasted: 0 lbs")
-                Text("Food Saved: ") + Text("0 lbs")
 //                Text(profile.goalDate, style: .date)
                 Divider()
                                 VStack(alignment: .leading) {

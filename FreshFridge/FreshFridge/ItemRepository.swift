@@ -87,5 +87,15 @@ class ItemRepository: ObservableObject {
             fatalError("Unable to update item:  \(error.localizedDescription)")
         }
     }
+    
+    //MARK: Updating firebase lbs wasted
+        func updatePoundsWasted(_ item: InventoryItem) {
+            guard let id = item.id else { return }
+            do {
+                try store.collection(path).document("wasted").setData(from: item)
+            } catch  {
+                fatalError("Unable to update item:  \(error.localizedDescription)")
+            }
+        }
 }
 

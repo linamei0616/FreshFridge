@@ -14,6 +14,9 @@ struct ProfileSummary: View {
     @EnvironmentObject var signupVM : SignUpViewModel
     @EnvironmentObject var userAuth : globalAuth
     @Environment(\.presentationMode) var presentationMode
+    @AppStorage("wasted") var wastedItems : Int = 0
+    @AppStorage("saved") var savedItems : Int = 0
+
     
     
     @State var shareCode: String = ""
@@ -45,7 +48,8 @@ struct ProfileSummary: View {
                     .font(.title)
                 Text("Notifications: \(profile.prefersNotifications ? "On": "Off" )")
 //                Text("Food Wasted: \(profile.seasonalPhoto.rawValue)")
-                Text("Food Wasted: 0 lbs")
+                Text("Food Wasted: \(wastedItems)")
+                Text("Food Saved: \(savedItems)")
 //                Text(profile.goalDate, style: .date)
                 Divider()
                                 VStack(alignment: .leading) {

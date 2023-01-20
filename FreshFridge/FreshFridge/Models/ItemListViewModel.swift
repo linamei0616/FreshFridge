@@ -34,6 +34,11 @@ class ItemListViewModel: ObservableObject {
         itemRepository.delete(at: offsets)
     }
     
+    func removeItem(item: InventoryItem) {
+        itemRepository.deleteItem(item: item)
+    }
+    
+    
     func update(_ item: InventoryItem) {
         itemRepository.update(item)
     }

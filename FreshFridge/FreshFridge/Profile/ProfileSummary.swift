@@ -48,8 +48,20 @@ struct ProfileSummary: View {
                     .font(.title)
                 Text("Notifications: \(profile.prefersNotifications ? "On": "Off" )")
 //                Text("Food Wasted: \(profile.seasonalPhoto.rawValue)")
-                Text("Food Wasted: \(wastedItems)")
-                Text("Food Saved: \(savedItems)")
+                HStack {
+                    Text("Food Wasted: \(wastedItems)")
+                    RoundedRectangle(cornerRadius: 12)
+                        .fill(Color.brown)
+                        .frame(width: 10, height: 10)
+                }
+                HStack {
+                    Text("Food Saved: \(savedItems)")
+                    RoundedRectangle(cornerRadius: 12)
+                        .fill(Color.green)
+                        .frame(width: 10, height: 10)
+                }
+//                Pie(slices: [(Double(wastedItems), Color.red), (Double(savedItems), Color.blue)])
+                Pie(slices: [(Double(wastedItems), Color.brown), (Double(savedItems), Color.green)])
 //                Text(profile.goalDate, style: .date)
                 Divider()
                                 VStack(alignment: .leading) {
@@ -68,21 +80,27 @@ struct ProfileSummary: View {
                                         .padding(.bottom)
                                     }
                                 }
-                Text("Share")
-                    .font(.headline)
-                Text("Enter a friend's code to share fridges!")
-                    .font(.subheadline)
-                TextField("Enter a friend's code", text: $shareCode)
-                        .textFieldStyle(RoundedBorderTextFieldStyle())
-                        .disableAutocorrection(true)
-                        .padding()
-                Button(action: {
+                Button {
                     presentationMode.wrappedValue.dismiss()
-//                    signupVM.signOutWithGoogle()
                     signOutWithApple()
-                }, label: {
+                } label: {
                     Text("Sign out")
-                })
+                }
+//                Text("Share")
+//                    .font(.headline)
+//                Text("Enter a friend's code to share fridges!")
+//                    .font(.subheadline)
+//                TextField("Enter a friend's code", text: $shareCode)
+//                        .textFieldStyle(RoundedBorderTextFieldStyle())
+//                        .disableAutocorrection(true)
+//                        .padding()
+
+//                Button(action: {
+//                    presentationMode.wrappedValue.dismiss()
+//                    signOutWithApple()
+//                }, label: {
+//                    Text("Sign out")
+//                })
             }
         }
     }

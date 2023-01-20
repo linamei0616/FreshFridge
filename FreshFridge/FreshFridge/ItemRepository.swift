@@ -78,6 +78,17 @@ class ItemRepository: ObservableObject {
       }
     }
     
+    func deleteItem(item: InventoryItem) {
+        guard let itemID = item.id else { return }
+        store.collection(path).document(itemID).delete() { err in
+          if let err = err {
+            print("Error removing document: \(err)")
+          } else {
+            print("Document successfully removed!")
+          }
+        }
+    }
+    
 //MARK: Updating firebase
     func update(_ item: InventoryItem) {
         guard let id = item.id else { return }

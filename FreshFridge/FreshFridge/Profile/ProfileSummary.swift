@@ -62,6 +62,13 @@ struct ProfileSummary: View {
                 }
 //                Pie(slices: [(Double(wastedItems), Color.red), (Double(savedItems), Color.blue)])
                 Pie(slices: [(Double(wastedItems), Color.brown), (Double(savedItems), Color.green)])
+                Button {
+                    wastedItems = 0
+                    savedItems = 0
+                } label: {
+                    Text("Reset")
+                }
+
 //                Text(profile.goalDate, style: .date)
                 Divider()
                                 VStack(alignment: .leading) {

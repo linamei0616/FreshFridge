@@ -60,7 +60,6 @@ struct ProfileSummary: View {
                         .fill(Color.green)
                         .frame(width: 10, height: 10)
                 }
-//                Pie(slices: [(Double(wastedItems), Color.red), (Double(savedItems), Color.blue)])
                 Pie(slices: [(Double(wastedItems), Color.brown), (Double(savedItems), Color.green)])
                 Button {
                     wastedItems = 0
@@ -101,13 +100,6 @@ struct ProfileSummary: View {
 //                        .textFieldStyle(RoundedBorderTextFieldStyle())
 //                        .disableAutocorrection(true)
 //                        .padding()
-
-//                Button(action: {
-//                    presentationMode.wrappedValue.dismiss()
-//                    signOutWithApple()
-//                }, label: {
-//                    Text("Sign out")
-//                })
             }
         }
     }

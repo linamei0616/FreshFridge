@@ -44,6 +44,11 @@
 		3BE2338F294AB8E5006E57A3 /* BadgeBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE23386294AB8E5006E57A3 /* BadgeBackground.swift */; };
 		3BE23390294AB8E5006E57A3 /* ProfileScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE23387294AB8E5006E57A3 /* ProfileScreen.swift */; };
 		3BE23391294AB8E5006E57A3 /* Badge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE23388294AB8E5006E57A3 /* Badge.swift */; };
+		3BE6348D297A565A0095AB79 /* Onboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE6348C297A565A0095AB79 /* Onboarding.swift */; };
+		3BE63491297A56BC0095AB79 /* OnboardingViewOne.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE6348E297A56BC0095AB79 /* OnboardingViewOne.swift */; };
+		3BE63492297A56BC0095AB79 /* OnboardingViewThree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE6348F297A56BC0095AB79 /* OnboardingViewThree.swift */; };
+		3BE63493297A56BC0095AB79 /* OnboardingViewTwo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE63490297A56BC0095AB79 /* OnboardingViewTwo.swift */; };
+		3BE63495297A59400095AB79 /* NeedToLoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE63494297A59400095AB79 /* NeedToLoginView.swift */; };
 		3BF3377B292C50A600AF0359 /* GroceryItemLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF3377A292C50A600AF0359 /* GroceryItemLabel.swift */; };
 		3BF3377F292C514A00AF0359 /* NewInventoryItemForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF3377E292C514A00AF0359 /* NewInventoryItemForm.swift */; };
 		844A98662939995400AFB50C /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 844A98652939995400AFB50C /* Launch Screen.storyboard */; };
@@ -81,6 +86,11 @@
 		3BE23386294AB8E5006E57A3 /* BadgeBackground.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BadgeBackground.swift; sourceTree = "<group>"; };
 		3BE23387294AB8E5006E57A3 /* ProfileScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileScreen.swift; sourceTree = "<group>"; };
 		3BE23388294AB8E5006E57A3 /* Badge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Badge.swift; sourceTree = "<group>"; };
+		3BE6348C297A565A0095AB79 /* Onboarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding.swift; sourceTree = "<group>"; };
+		3BE6348E297A56BC0095AB79 /* OnboardingViewOne.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingViewOne.swift; sourceTree = "<group>"; };
+		3BE6348F297A56BC0095AB79 /* OnboardingViewThree.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingViewThree.swift; sourceTree = "<group>"; };
+		3BE63490297A56BC0095AB79 /* OnboardingViewTwo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingViewTwo.swift; sourceTree = "<group>"; };
+		3BE63494297A59400095AB79 /* NeedToLoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeedToLoginView.swift; sourceTree = "<group>"; };
 		3BF3377A292C50A600AF0359 /* GroceryItemLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroceryItemLabel.swift; sourceTree = "<group>"; };
 		3BF3377E292C514A00AF0359 /* NewInventoryItemForm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewInventoryItemForm.swift; sourceTree = "<group>"; };
 		844A98652939995400AFB50C /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
@@ -125,6 +135,7 @@
 			children = (
 				3B82EAF22943CDBC00DB0F59 /* SignUpViewModel.swift */,
 				3B16AC8A2943B33F008CE17E /* Application.swift */,
+				3BE63494297A59400095AB79 /* NeedToLoginView.swift */,
 			);
 			path = Auth;
 			sourceTree = "<group>";
@@ -148,6 +159,7 @@
 		3B6F6E4B2900BF2000242495 /* FreshFridge */ = {
 			isa = PBXGroup;
 			children = (
+				3BC66962297A54BD00955956 /* Onboarding */,
 				3BCA6B08296D0AA500A231A1 /* FreshFridge.entitlements */,
 				3BC8D63E292598FB00A55011 /* InventoryItem.swift */,
 				01E1197529074F7100EF825E /* ItemRepository.swift */,
@@ -183,6 +195,17 @@
 				3B93C00F2943A345009EC772 /* LoginScreen.swift */,
 			);
 			path = "Unused Files";
+			sourceTree = "<group>";
+		};
+		3BC66962297A54BD00955956 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				3BE6348E297A56BC0095AB79 /* OnboardingViewOne.swift */,
+				3BE6348F297A56BC0095AB79 /* OnboardingViewThree.swift */,
+				3BE63490297A56BC0095AB79 /* OnboardingViewTwo.swift */,
+				3BE6348C297A565A0095AB79 /* Onboarding.swift */,
+			);
+			path = Onboarding;
 			sourceTree = "<group>";
 		};
 		3BC8D638292584C700A55011 /* Views */ = {
@@ -327,11 +350,14 @@
 				3B82EAF32943CDBC00DB0F59 /* SignUpViewModel.swift in Sources */,
 				3BE23390294AB8E5006E57A3 /* ProfileScreen.swift in Sources */,
 				3BE2338E294AB8E5006E57A3 /* BadgeSymbol.swift in Sources */,
+				3BE63491297A56BC0095AB79 /* OnboardingViewOne.swift in Sources */,
 				3BE23391294AB8E5006E57A3 /* Badge.swift in Sources */,
 				3B1FEF40292305EE009873ED /* ItemViewModel.swift in Sources */,
+				3BE6348D297A565A0095AB79 /* Onboarding.swift in Sources */,
 				3B6F6E4D2900BF2000242495 /* FreshFridgeApp.swift in Sources */,
 				3B93C0102943A345009EC772 /* LoginScreen.swift in Sources */,
 				3BE2337C294A9E86006E57A3 /* EditScreen.swift in Sources */,
+				3BE63493297A56BC0095AB79 /* OnboardingViewTwo.swift in Sources */,
 				3BE2338B294AB8E5006E57A3 /* Profile.swift in Sources */,
 				3BCA6B07296D091A00A231A1 /* ContentView.swift in Sources */,
 				3BC8D63F292598FB00A55011 /* InventoryItem.swift in Sources */,
@@ -345,6 +371,8 @@
 				01E1197629074F7100EF825E /* ItemRepository.swift in Sources */,
 				3BE23389294AB8E5006E57A3 /* RotatedBadgeSymbol.swift in Sources */,
 				3BE2338D294AB8E5006E57A3 /* HexagonParameters.swift in Sources */,
+				3BE63495297A59400095AB79 /* NeedToLoginView.swift in Sources */,
+				3BE63492297A56BC0095AB79 /* OnboardingViewThree.swift in Sources */,
 				3BAEA49A29387D92005510E1 /* AmountWastedScreen.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

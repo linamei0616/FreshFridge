@@ -28,7 +28,7 @@ As a team of college students, we wanted to create an app that combats food wast
 ## Repo Structure
 All the files can be viewed at [`/FreshFridge`](https://github.com/linamei0616/FreshFridge/tree/main/FreshFridge/FreshFridge)
 
-The heart of our app is located at [`/InventoryItemListView`](https://github.com/linamei0616/FreshFridge/blob/main/FreshFridge/FreshFridge/Views/InventoryItemListView.swift)
+The heart of our app is located at [`/ContentView.swift`](https://github.com/linamei0616/FreshFridge/blob/main/FreshFridge/FreshFridge/Views/ContentView.swift)
 
 ## Team
 Lina Mei

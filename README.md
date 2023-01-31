@@ -11,6 +11,13 @@
   <a href="#team">Team</a>
 </p>
 
+<p align="center">
+  <img src="/screenshot1.jpeg" width=200 height=400/>
+  <img src="/screenshot2.jpeg" width=200 height=400/> 
+  <img src="/screenshot3.jpeg" width=200 height=400/>
+  <img src="/screenshot4.jpeg" width=200 height=400/>
+</p>
+
 ## [Presentation Video](https://youtu.be/yAhsvabrIwg)
 
 ## [Website](https://fridgeview2022.wixsite.com/fridge-view)
